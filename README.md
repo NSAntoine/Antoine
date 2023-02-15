@@ -15,9 +15,9 @@ If you have used Console.app on macOS before, think of this as the iOS equivalen
 Any iOS 13+ device that is jailbroken or uses TrollStore, basically any device where you can get arbitrary entitlements
 
 ## How does it work?
-Antoine works by using a private System framework, LoggingSupport.framework, a framework containing C functions & structs to stream System log messages, Antoine does the following:
+Antoine works by using a private System framework, LoggingSupport.framework, a mixed C & Objective-C framework to stream system log messages, the application does the following:
 - Create a ``os_activity_stream_block_t`` closure that handles incoming messages, the closure provides 2 arguments (an `os_activity_stream_entry_t` entry, and an error code number as an `int`), the closure calls a delegate method to tell the user of the class that a new message was recieved
-- Create a `os_activity_stream_event_block_t` closure that handles when new major events (not messages) occur in the stream (such as when the stream starts, stops, fails, etc), this closure calls a delete method that is used to update the application UI
+- Create a `os_activity_stream_event_block_t` closure that handles when new major events (not messages) occur in the stream (such as when the stream starts, stops, fails, etc), this closure calls a delegate method that is used to update the application UI
 - Create the activity stream with `os_activity_stream_for_pid`, the the `os_activity_stream_for_pid` takes in 3 arguments: the pid of the process, since we want logs of all processes, we pass in `-1`, the second argument is a set of stream flags to pass in, see `os_activity_stream_flag_t` in `ActivityStream.h`, the third argument is the `os_activity_stream_block_t` we created earlier
 - Call `os_activity_stream_set_event_handler` on the activity stream & the block handler, to be notified of when new events occur
 - Call `os_activity_stream_resume` to start the activity stream.
@@ -34,4 +34,3 @@ Whenever we want to pause the activity stream, we call `os_activity_stream_cance
 - [Serena](https://twitter.com/CoreSerena): Developer, creator of app
 - [saagarjha](https://federated.saagarjha.com/users/saagar): Help with using os_log_* functions
 - [Flower](https://twitter.com/flowerible): Icon designer
-# Antoine
