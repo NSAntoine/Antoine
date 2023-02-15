@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "In order to continue receiving logs in the background, Antoine needs location permissions keep the app alive in the background, if you agree, press 'Allow While Using App'";

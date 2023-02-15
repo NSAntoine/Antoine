@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "alderis",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hbang/Alderis",
+      "state" : {
+        "revision" : "178c2ecee01436ee27032c8a54309decfbaaf885",
+        "version" : "1.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}
