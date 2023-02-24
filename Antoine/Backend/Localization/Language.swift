@@ -12,12 +12,16 @@ struct Language {
         return Bundle.main.localizations.compactMap { languageCode in
             // Skip over 'Base', it means nothing
             guard languageCode != "Base",
-                  let display = Locale(identifier: languageCode).localizedString(forLanguageCode: languageCode),
                   let subtitle = Locale.current.localizedString(forLanguageCode: languageCode) else {
                 return nil
             }
             
-            return Language(displayName: display, subtitleText: subtitle, languageCode: languageCode)
+            let displayLocale = Locale(identifier: languageCode)
+            guard let displayName = displayLocale.localizedString(forLanguageCode: languageCode)?.capitalized(with: displayLocale) else {
+                return nil
+            }
+            
+            return Language(displayName: displayName, subtitleText: subtitle, languageCode: languageCode)
         }
     }
     

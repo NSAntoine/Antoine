@@ -69,6 +69,9 @@
 		CE29769829394C3A00EAD1D0 /* ActivityEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityEvents.h; sourceTree = "<group>"; };
 		CE29769929394D1300EAD1D0 /* OSActivityLogMessageEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityLogMessageEvent.h; sourceTree = "<group>"; };
 		CE29769A29394DCC00EAD1D0 /* StreamEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamEntry.swift; sourceTree = "<group>"; };
+		CE2C7C7829A8F7D200BA613D /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE2C7C7929A8F7D200BA613D /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE2C7C7A29A8F7D200BA613D /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE2EA756298E5AF900405660 /* CreditsPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsPerson.swift; sourceTree = "<group>"; };
 		CE318B1629645532002AB38D /* UniqueCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueCollection.swift; sourceTree = "<group>"; };
 		CE31B513294305360072C832 /* OSActivityStreamDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityStreamDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +100,9 @@
 		CE6199442997F9AE00CF6C55 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		CE619947299801A400CF6C55 /* ApplicationMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMonitor.swift; sourceTree = "<group>"; };
 		CE6AB2A9293E406C004F41AF /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		CE7CFC9829A908E000FDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE7CFC9929A908E000FDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE7CFC9A29A908E000FDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE8380032944D981003759AD /* EntryFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFilterViewController.swift; sourceTree = "<group>"; };
 		CE8380042944D981003759AD /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		CE84DFFF2943C1EC00FE1E17 /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
@@ -358,6 +364,8 @@
 				en,
 				Base,
 				ru,
+				sv,
+				fr,
 			);
 			mainGroup = CE5212372930A29B00521064;
 			packageReferences = (
@@ -437,6 +445,8 @@
 			children = (
 				CE3D876629991B4400DE9079 /* en */,
 				CEBCCEC7299E0572006C3D23 /* ru */,
+				CE2C7C7929A8F7D200BA613D /* sv */,
+				CE7CFC9929A908E000FDABE9 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -446,6 +456,8 @@
 			children = (
 				CE52124F2930A29C00521064 /* Base */,
 				CEBCCEC6299E0572006C3D23 /* ru */,
+				CE2C7C7829A8F7D200BA613D /* sv */,
+				CE7CFC9829A908E000FDABE9 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -455,6 +467,8 @@
 			children = (
 				CECCBA4129993C5A00BA19F6 /* en */,
 				CEBCCEC8299E0572006C3D23 /* ru */,
+				CE2C7C7A29A8F7D200BA613D /* sv */,
+				CE7CFC9A29A908E000FDABE9 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

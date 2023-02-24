@@ -47,6 +47,7 @@ class PreferredLanguageViewController: UITableViewController {
             cell.accessoryType = Preferences.preferredLanguageCode == lang.languageCode ? .checkmark : .none
             cell.textLabel?.text = lang.displayName
             cell.detailTextLabel?.text = lang.subtitleText
+            cell.detailTextLabel?.textColor = .secondaryLabel
         }
         
         return cell

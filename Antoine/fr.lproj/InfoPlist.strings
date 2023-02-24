@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "Pour toujours recevoir les logs en arrière-plan, Antoine à besoin de toujours avoir l’autorisation d’utiliser vote localisation. Si vous êtes d’accord appuyez sur Toujours Autoriser.";

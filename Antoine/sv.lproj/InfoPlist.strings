@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "För att kunna fortsätta ta emot loggar i bakgrunden behöver Antoine platsbehörighet hålla appen levande i bakgrunden, om du accepterar trycker du på \"Tillåt Medan Du Använder Appen\"";
