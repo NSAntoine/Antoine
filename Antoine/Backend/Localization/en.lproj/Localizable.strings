@@ -110,3 +110,8 @@
 "Include Debug Messages" = "Include Debug Messages";
 "Include Info Messages" = "Include Info Messages";
 "Precise Timestamps" = "Precise Timestamps";
+
+/* PreferredLanguageViewController */
+"Language" = "Language";
+"Restart Application for changes to fully apply" = "Restart Application for changes to fully apply";
+"Use System Language" = "Use System Language";

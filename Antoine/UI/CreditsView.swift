@@ -10,7 +10,7 @@ import SwiftUI
 struct CreditsView: View {
     @State var people: [CreditsPerson] = []
     @State var madokaHomuraGifImg: GIFImage? = nil
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     var body: some View {
         List {
             VStack(alignment: .center) {
@@ -57,12 +57,12 @@ struct CreditsPersonView: View {
             }
         }
         .onAppear {
-            Task {
-                if let (data, _) = try? await URLSession.shared.data(from: person.pfpURL),
-                    let uiImage = UIImage(data: data) {
+            URLSession.shared.dataTask(with: person.pfpURL) { data, _, _ in
+                if let data, let uiImage = UIImage(data: data) {
                     self.img = Image(uiImage: uiImage)
                 }
             }
+            .resume()
         }
     }
 }

@@ -1,0 +1,118 @@
+/* 
+ Localizable.strings (Russian)
+ Antoine
+ 
+ Created by Serena on 12/02/2023.
+ Localized by Eevee, haxi0
+ */
+
+/* Entry Filter View Controller (Navigation Title) */
+"Search Filter" = "Фильтр поиска";
+
+/* Entry Filter View Controller (Section Titles) */
+"Process ID" = "ID процесса";
+"Process Name" = "Имя процесса";
+"Category" = "Категория";
+"Subsystem" = "Подсистема";
+"Allowed Types" = "Разрешенные типы";
+
+/* Entry Filter View Controller (isEnabled Section Names) */
+"Filter by Message Text" = "Фильтровать по содержанию сообщения";
+"Filter by Process ID" = "Фильтровать по ID процесса";
+"Filter by Process Name" = "Фильтровать по имени процесса";
+"Filter by Category" = "Фильтровать по категории";
+"Filter by Subsystem" = "Фильтровать по подсистеме";
+
+/* Entry Filter View Controller (UITextView Placeholders) */
+"Message text filter.." = "Содержание сообщения..";
+"Subsystem filter.." = "Подсистема..";
+"Category filter.." = "Категория..";
+"Process name filter.." = "Имя процесса..";
+
+/* Entry Filter View Controller (Other) */
+"Apply" = "Применить";
+"Mode" = "Режим";
+"Process ID entered must be a valid number" = "ID процесса не должен превышать 2,147,483,647";
+
+/* Stream View Controller */
+"Stream" = "Журнал";
+
+/* Preferences View Controller */
+"Preferences" = "Параметры";
+"Reset" = "Сбросить";
+"Refresh Rate" = "Частота обновления";
+"Type Colors" = "Цвета типов";
+"RefreshRateExplaination" = "Время в секундах, по истечении которого журнал будет обновлен";
+
+/* Credits */
+"Credits" = "Авторы";
+
+/* Entry View Controller (Sections) */
+"Message" = "Сообщение";
+"Process" = "Процесс";
+"Sender"  = "Отправитель";
+"Date"    = "Дата";
+"Other"   = "Другое";
+"Category & Subsystem" = "Категория и подсистема";
+
+/* Entry View Controller (Primary Text) */
+"Name" = "Имя";
+"ID" = "ID";
+"Path" = "Путь";
+"Timestamp (UNIX Time)" = "Отметка времени (UNIX Time)";
+"Message Type" = "Тип сообщения";
+"Event Type" = "Тип события";
+"Activity ID" = "ID активности";
+"Trace ID" = "ID отслеживания";
+"Thread ID" = "ID потока";
+
+/* Entry View Controller (Misc) */
+"Copy" = "Копировать"; /* copying item to clipboard *
+
+/* MessageEvent display texts */
+"Default" = "Стандартное сообщение";
+"Debug" = "Сообщение отладки";
+"Info" = "Информационное сообщение";
+"Fault" = "Сбой";
+"Error" = "Ошибка";
+
+/* TextFilter mode descriptions */
+"Equal To" = "Равно";
+"Not Equal To" = "Не равно";
+/* text contains another text */
+"Contains" = "Содержит";
+/* text *doesn't* contain other text in it */
+"Doesn't Contain" = "Не содержит";
+/* text starts with another text */
+"Starts With" = "Начинается с";
+/* text ends with another text */
+"Ends With" = "Заканчивается с";
+
+/* Background Mode (Application UI) */
+"Background Mode" = "Фоновый режим";
+"Collect logs in background" = "Собирать журналы в фоновом режиме";
+"Collect logs in the background until.." = "Собирать журналы в фоновом режиме до..";
+"Keep collecting logs in the background" = "Продолжить собирать журналы в фоновом режиме";
+"For background mode, please authorize the app with Always-On Location Services" = "Antoine требуется постоянный доступ к геолокации, чтобы запустить фоновый режим";
+
+/* Background Mode (User Notifications) */
+"Stopped" = "Остановлено";
+"Pause" = "Пауза";
+"Couldn't start background mode" = "Не удалось запустить фоновый режим";
+"Antoine needs Always-On Location Authorization in order to enable Background Mode" = "Antoine требуется постоянный доступ к геолокации, чтобы запустить фоновый режим";
+"Antoine is now collecting logs in the background" = "Antoine собирает журналы в фоновом режиме";
+"App has stopped collecting logs in background" = "Приложение остановило сбор журналов в фоновом режиме";
+
+/* Stream Options */
+"Stream Options" = "Параметры журнала";
+"All" = "Все";
+"Show Messages before Stream was started" = "Показывать сообщения до начала сбора журналов";
+"Don't include sensitive data" = "Не добавлять конфиденциальные данные";
+"Include Debug Messages" = "Добавлять сообщения отладки";
+"Include Info Messages" = "Добавлять информационные сообщения";
+"Precise Timestamps" = "Точные отметки времени";
+
+/* PreferredLanguageViewController */
+"Language" = "Язык";
+"Restart Application for changes to fully apply" = "Перезапустите Приложение что-бы изменения полностью применились";
+"Use System Language" = "Использовать Системный Язык";

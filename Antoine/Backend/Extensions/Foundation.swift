@@ -32,12 +32,25 @@ extension URL: ExpressibleByStringLiteral {
     }
 }
 
+extension Bundle {
+    static func makeLocalizationBundle(preferredLanguageCode: String? = Preferences.preferredLanguageCode) -> Bundle {
+        if let preferredLangCode = preferredLanguageCode,
+           let bundle = Bundle(path: Bundle.main.path(forResource: preferredLangCode, ofType: "lproj")!) {
+            return bundle
+        }
+        
+        return Bundle.main
+    }
+    
+    // MAKE SURE TO UPDATE THIS WHENEVER `Preferences.preferredLanguageCode` IS CHANGED!!
+    static var preferredLocalizationBundle = makeLocalizationBundle()
+}
 extension String {
     static func localized(_ name: String) -> String {
-        return NSLocalizedString(name, comment: "")
+        return NSLocalizedString(name, bundle: .preferredLocalizationBundle, comment: "")
     }
     
     func localized() -> String {
-        return NSLocalizedString(self, comment: "")
+        return String.localized(self)
     }
 }

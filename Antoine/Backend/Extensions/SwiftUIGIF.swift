@@ -37,6 +37,7 @@ public class UIGIFImage: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     convenience init(data: Data) {
         self.init()
         self.data = data
@@ -72,10 +73,10 @@ public class UIGIFImage: UIView {
 
 public extension UIImage {
     class func gifImage(data: Data) -> UIImage? {
-        guard let source = CGImageSourceCreateWithData(data as CFData, nil)
-        else {
+        guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             return nil
         }
+        
         let count = CGImageSourceGetCount(source)
         let delays = (0..<count).map {
             // store in ms and truncate to compute GCD more easily
@@ -99,7 +100,7 @@ public extension UIImage {
         }
         
         return UIImage.animatedImage(with: frames,
-                                     duration: Double(duration) / 1000.0)
+                                     duration: Double(duration) / 1000)
     }
     
 }

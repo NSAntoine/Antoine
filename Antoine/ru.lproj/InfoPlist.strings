@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "Для того, чтобы продолжать получать журналы в фоновом режиме, Antoine нужно разрешение геолокации для беспрерывной работы. Если вы согласны - нажмите на кнопку «Разрешить»";

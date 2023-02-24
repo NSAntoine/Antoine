@@ -19,7 +19,7 @@ class PreferencesViewController: UIViewController {
         setupViews()
         
         title = .localized("Preferences")
-		navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupViews() {
@@ -30,28 +30,26 @@ class PreferencesViewController: UIViewController {
         view.addSubview(tableView)
         tableView.constraintCompletely(to: view)
     }
-	
-	deinit {
-		NotificationCenter.default.removeObserver(self)
-		NSLog("Deinit called")
-	}
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        NSLog("Deinit called")
+    }
 }
 
 extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case 0, 3, 4:
             return 1
         case 1:
             return Preferences.backgroundMode == nil ? 1 : 2
         case 2:
             return MessageEvent.allCases.count + 1
-        case 3:
-            return 1
         default:
             fatalError("How did we get here?")
         }
@@ -68,11 +66,11 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
             
             let uiSwitch = UISwitch()
             uiSwitch.isOn = Preferences.backgroundMode != nil
-            uiSwitch.addAction(for: .valueChanged, id: "CollectLogsInBackground") {
+            uiSwitch.addAction(for: .valueChanged) {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
                 
                 if uiSwitch.isOn {
-					Preferences.backgroundMode = .backgroundTime(60) // minute by default
+                    Preferences.backgroundMode = .backgroundTime(60) // minute by default
                     tableView.insertRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
                 } else {
                     Preferences.backgroundMode = nil
@@ -98,7 +96,7 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         case (2, _):
             let cell = UITableViewCell()
             if indexPath.row == MessageEvent.allCases.count { // Reset button
-				cell.textLabel?.text = .localized("Reset")
+                cell.textLabel?.text = .localized("Reset")
                 cell.textLabel?.textColor = .systemBlue
             } else {
                 let item = MessageEvent.allCasesNonLazily[indexPath.row]
@@ -110,6 +108,11 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         case (3, 0):
             let cell = UITableViewCell()
             cell.textLabel?.text = .localized("Credits")
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        case (4, 0):
+            let cell = UITableViewCell()
+            cell.textLabel?.text = .localized("Language")
             cell.accessoryType = .disclosureIndicator
             return cell
         default:
@@ -171,15 +174,22 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         switch section {
         case 0:
             return NSLocalizedString("RefreshRateExplaination", value: "This is the time that the Log Stream takes to refresh in seconds, ie, if it was 1.0, then the log stream would show new logs every 1.0 second", comment: "")
-		case 1:
-			return .localized("Location Services need to be turned on in order for background mode to work")
+        case 1:
+            return .localized("Location Services need to be turned on in order for background mode to work")
         default:
             return nil
         }
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.section == 2 || indexPath.section == 3
+        switch indexPath.section {
+        case 2, 3, 4:
+            return true
+        default:
+            return false
+        }
+        
+//        return indexPath.section == 2 || indexPath.section == 3
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -189,6 +199,9 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         case 3:
             //tableView.deselectRow(at: indexPath, animated: true)
             navigationController?.pushViewController(UIHostingController(rootView: CreditsView()), animated: true)
+        case 4:
+            navigationController?.pushViewController(PreferredLanguageViewController(style: .insetGrouped),
+                                                     animated: true)
         default:
             break
         }

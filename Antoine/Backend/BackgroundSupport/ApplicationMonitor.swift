@@ -27,35 +27,35 @@ class ApplicationMonitor: NSObject, UNUserNotificationCenterDelegate/*, AVAudioP
     
     var isMonitoring = false
     
-	/*var audioPlayer: AVAudioPlayer!*/
-	override init() {
-		super.init()
-		
-		UNUserNotificationCenter.current().delegate = self
-	}
-	
-	func userNotificationCenter(
-		_ center: UNUserNotificationCenter,
-		didReceive response: UNNotificationResponse,
-		withCompletionHandler completionHandler: @escaping () -> Void) {
-		switch response.actionIdentifier {
-		case "LoggingStarted":
-			// pause ongoing log collection
-			let delegate = (response.targetScene?.delegate as? SceneDelegate)
-			delegate?.backgroundModeFinished(sendNotification: true)
-		default:
-			break
-		}
-		
-		completionHandler()
-	}
-	
+    /*var audioPlayer: AVAudioPlayer!*/
+    override init() {
+        super.init()
+        
+        UNUserNotificationCenter.current().delegate = self
+    }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void) {
+            switch response.actionIdentifier {
+            case "LoggingStarted":
+                // pause ongoing log collection
+                let delegate = (response.targetScene?.delegate as? SceneDelegate)
+                delegate?.backgroundModeFinished(sendNotification: true)
+            default:
+                break
+            }
+            
+            completionHandler()
+        }
+    
     func start() {
         guard !isMonitoring else {
             return
         }
         
-		
+        
         isMonitoring = true
         cancelAppQuitNotif()
         
@@ -68,13 +68,13 @@ class ApplicationMonitor: NSObject, UNUserNotificationCenterDelegate/*, AVAudioP
         locationManager.stop()
     }
     
-	/*
-	func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-		print("finished")
-		
-	}
-	 */
-	
+    /*
+     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+     print("finished")
+     
+     }
+     */
+    
     func registerForNotifs() {
         CFNotificationCenterAddObserver(
             CFNotificationCenterGetDarwinNotifyCenter(),
@@ -87,43 +87,43 @@ class ApplicationMonitor: NSObject, UNUserNotificationCenterDelegate/*, AVAudioP
     }
     
     func cancelAppQuitNotif() {
-		UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
     
     
-	func sendNotification(title: String,
-						  body: String,
-						  categoryId: String?,
-						  delay: TimeInterval = 1,
-						  requestID: String? = nil) {
+    func sendNotification(title: String,
+                          body: String,
+                          categoryId: String?,
+                          delay: TimeInterval = 1,
+                          requestID: String? = nil) {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-		
-		if let categoryId {
-			content.categoryIdentifier = categoryId
-		}
-		
+        
+        if let categoryId {
+            content.categoryIdentifier = categoryId
+        }
+        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
         
-		let request = UNNotificationRequest(identifier: requestID ?? applicationNotificationRequest, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: requestID ?? applicationNotificationRequest, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
-	
-	func addAction(title: String, actionIdentifier: String, categoryIdentifier: String) {
-		let action = UNNotificationAction(identifier: actionIdentifier,
-										  title: title)
-		
-		let category = UNNotificationCategory(
-			identifier: categoryIdentifier,
-			actions: [action],
-			intentIdentifiers: [],
-			options: .customDismissAction
-		)
-		
-		UNUserNotificationCenter.current().setNotificationCategories([category])
-	}
+    
+    func addAction(title: String, actionIdentifier: String, categoryIdentifier: String) {
+        let action = UNNotificationAction(identifier: actionIdentifier,
+                                          title: title)
+        
+        let category = UNNotificationCategory(
+            identifier: categoryIdentifier,
+            actions: [action],
+            intentIdentifiers: [],
+            options: .customDismissAction
+        )
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
     
     func receivedApplicationStateRequest() {
         guard UIApplication.shared.applicationState != .background else {

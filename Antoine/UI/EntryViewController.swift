@@ -49,22 +49,20 @@ class EntryViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGroupedBackground
-		
+        
         setupTitleView()
         setupTableView()
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
-	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		
-		if #available(iOS 15, *) {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if #available(iOS 15, *) {
             // in viewDidLoad, view.window is nil,
             // so we set it here in viewDidAppear(_:) instead
-			view.window?.windowScene?.title = "Entry - \(entry.process)"
-		}
-	}
+            view.window?.windowScene?.title = "Entry - \(entry.process)"
+        }
+    }
     
     func setupTitleView() {
         self.titleView = UIView()
@@ -187,50 +185,50 @@ class EntryViewController: UIViewController {
             return [messageItem]
         case .process:
             return [
-				DetailItem(primaryText: .localized("Name"),
-						   secondaryText: entry.process, id: "ProcessName"),
-				DetailItem(primaryText: .localized("ID"),
-						   secondaryText: entry.processID, id: "ProcessID"),
-				DetailItem(primaryText: .localized("Path"),
-						   secondaryText: entry.processImagePath, id: "ProcessPath")
+                DetailItem(primaryText: .localized("Name"),
+                           secondaryText: entry.process, id: "ProcessName"),
+                DetailItem(primaryText: .localized("ID"),
+                           secondaryText: entry.processID, id: "ProcessID"),
+                DetailItem(primaryText: .localized("Path"),
+                           secondaryText: entry.processImagePath, id: "ProcessPath")
             ]
         case .sender:
             return [
-				DetailItem(primaryText: .localized("Name"),
-						   secondaryText: entry.sender, id: "SenderName"),
-				DetailItem(primaryText: .localized("Path"),
-						   secondaryText: entry.senderImagePath, id: "SenderPath")
+                DetailItem(primaryText: .localized("Name"),
+                           secondaryText: entry.sender, id: "SenderName"),
+                DetailItem(primaryText: .localized("Path"),
+                           secondaryText: entry.senderImagePath, id: "SenderPath")
             ]
         case .date:
             let dateFormatter = DateFormatter(dateFormat: "MMM d, h:mm a")
             return [
-				DetailItem(primaryText: .localized("Date"),
-						   secondaryText: dateFormatter.string(from: entry.timestamp),
-						   id: "FormattedDate"),
-				DetailItem(primaryText: .localized("Timestamp (UNIX Time)"),
-						   secondaryText: Int(entry.timestamp.timeIntervalSince1970),
-						   id: "UNIXTimeStamp")
+                DetailItem(primaryText: .localized("Date"),
+                           secondaryText: dateFormatter.string(from: entry.timestamp),
+                           id: "FormattedDate"),
+                DetailItem(primaryText: .localized("Timestamp (UNIX Time)"),
+                           secondaryText: Int(entry.timestamp.timeIntervalSince1970),
+                           id: "UNIXTimeStamp")
             ]
         case .categoryAndSubsystem:
             return [
-				DetailItem(primaryText: .localized("Category"),
-						   secondaryText: entry.category ?? "Unknown", id: "Category"),
-				DetailItem(primaryText: .localized("Subsystem"),
-						   secondaryText: entry.subsystem ?? "Unknown", id: "Subsystem")
+                DetailItem(primaryText: .localized("Category"),
+                           secondaryText: entry.category ?? "Unknown", id: "Category"),
+                DetailItem(primaryText: .localized("Subsystem"),
+                           secondaryText: entry.subsystem ?? "Unknown", id: "Subsystem")
             ]
         case .other:
-			let eventType = StreamEntryType(rawValue: UInt32(entry.eventType))
+            let eventType = StreamEntryType(rawValue: UInt32(entry.eventType))
             return [
-				DetailItem(primaryText: .localized("Message Type"), secondaryText: entry.type?.displayText ?? "Unknown", id: "MessageType"),
-				DetailItem(primaryText: .localized("Event Type"),
-						   secondaryText: eventType?.description ?? "Unknown",
-						   id: "EventType"),
-				DetailItem(primaryText: .localized("Activity ID"),
-						   secondaryText: entry.activityID, id: "ActivityID"),
-				DetailItem(primaryText: .localized("Trace ID"),
-						   secondaryText: entry.traceID, id: "TraceID"),
-				DetailItem(primaryText: .localized("Thread ID"),
-						   secondaryText: entry.threadID, id: "ThreadID")
+                DetailItem(primaryText: .localized("Message Type"), secondaryText: entry.type?.displayText ?? "Unknown", id: "MessageType"),
+                DetailItem(primaryText: .localized("Event Type"),
+                           secondaryText: eventType?.description ?? "Unknown",
+                           id: "EventType"),
+                DetailItem(primaryText: .localized("Activity ID"),
+                           secondaryText: entry.activityID, id: "ActivityID"),
+                DetailItem(primaryText: .localized("Trace ID"),
+                           secondaryText: entry.traceID, id: "TraceID"),
+                DetailItem(primaryText: .localized("Thread ID"),
+                           secondaryText: entry.threadID, id: "ThreadID")
             ]
         }
     }

@@ -373,14 +373,15 @@ extension StreamViewController: UICollectionViewDelegate {
                 splitViewController.setViewController(nil, for: .secondary)
             }
             
-            splitViewController.setViewController(self, for: .primary)
+            if splitViewController.viewController(for: .primary) != self {
+                splitViewController.setViewController(self, for: .primary)
+            }
             currentlyShownEntryViewController = EntryViewController(entry: entry)
             splitViewController.setViewController(currentlyShownEntryViewController, for: .secondary)
         } else {
             let vc = UINavigationController(rootViewController: EntryViewController(entry: entry))
             
-			if #available(iOS 15.0, *),
-			   UIDevice.current.userInterfaceIdiom == .pad,
+			if #available(iOS 15.0, *), UIDevice.current.userInterfaceIdiom == .pad,
 			   let sheet = vc.sheetPresentationController {
 				sheet.prefersGrabberVisible = true
 				sheet.detents = [.medium(), .large()]

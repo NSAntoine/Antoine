@@ -23,8 +23,7 @@ extension UILabel {
 // Support for closure-based addAction / addTarget functions
 // for iOS 13
 extension UIControl {
-#warning("Manually specify ID in some functions")
-    func addAction(for event: UIControl.Event, id: String = UUID().uuidString, _ closure: @escaping () -> Void) {
+    func addAction(for event: UIControl.Event, _ closure: @escaping () -> Void) {
         if #available(iOS 14.0, *) {
             let uiAction = UIAction { _ in closure() }
             addAction(uiAction, for: event)
@@ -39,7 +38,7 @@ extension UIControl {
         
         let sleeve = ClosureSleeve(closure)
         addTarget(sleeve, action: #selector(ClosureSleeve.invoke), for: event)
-        objc_setAssociatedObject(self, id, sleeve, .OBJC_ASSOCIATION_RETAIN)
+        objc_setAssociatedObject(self, UUID().uuidString, sleeve, .OBJC_ASSOCIATION_RETAIN)
     }
 }
 
