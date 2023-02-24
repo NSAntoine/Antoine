@@ -173,7 +173,7 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         switch section {
         case 0:
-            return NSLocalizedString("RefreshRateExplaination", value: "This is the time that the Log Stream takes to refresh in seconds, ie, if it was 1.0, then the log stream would show new logs every 1.0 second", comment: "")
+            return .localized("RefreshRateExplaination")
         case 1:
             return .localized("Location Services need to be turned on in order for background mode to work")
         default:
@@ -188,8 +188,6 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         default:
             return false
         }
-        
-//        return indexPath.section == 2 || indexPath.section == 3
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {

@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "من أجل الاستمرار في تلقي السجلات في الخلفية، يحتاج Antoine إلى أذونات الموقع لإبقاء التطبيق على قيد التشغيل في الخلفية، إذا كنت توافق، فاضغط على 'السماح أثناء استخدام التطبيق'";

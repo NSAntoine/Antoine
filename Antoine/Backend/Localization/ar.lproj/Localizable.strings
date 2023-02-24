@@ -1,0 +1,125 @@
+/*
+ Localizable.strings
+ Antoine
+ 
+ Created by Serena on 12/02/2023.
+ Localized by Hitori
+ */
+
+/* Entry Filter View Controller (Navigation Title) */
+"Search Filter" = "تصفية البحث";
+
+/* Entry Filter View Controller (Section Titles) */
+"Process ID" = "معرف العملية";
+"Process Name" = "اسم العملية";
+"Category" = "الفئة";
+"Subsystem" = "النظام الفرعي";
+"Allowed Types" = "الأنواع المسموح بها";
+
+/* Entry Filter View Controller (isEnabled Section Names) */
+"Filter by Message Text" = "تصفية حسب نص الرسالة";
+"Filter by Process ID" = "تصفية حسب معرف العملية";
+"Filter by Process Name" = "تصفية حسب اسم العملية";
+"Filter by Category" = "تصفية حسب الفئة";
+"Filter by Subsystem" = "تصفية حسب النظام الفرعي";
+
+/* Entry Filter View Controller (UITextView Placeholders) */
+"Message text filter.." = "تصفية نص الرسالة..";
+"Subsystem filter.." = "تصفية النظام الفرعي..";
+"Category filter.." = "تصفية الفئة..";
+"Process name filter.." = "تصفية اسم العملية..";
+
+/* Entry Filter View Controller (Other) */
+"Apply" = "طبق";
+"Mode" = "وضع";
+"Process ID entered must be a valid number" = "يجب أن يكون معرف العملية الذي تم إدخاله رقما صالحا";
+
+/* Stream View Controller */
+"Stream" = "التدفق";
+
+/* Preferences View Controller */
+"Preferences" = "التفضيلات";
+"Reset" = "إعادة تعيين";
+"Refresh Rate" = "معدل التحديث";
+"Type Colors" = "نوع الألوان";
+"RefreshRateExplaination" = "هذا هو الوقت الذي يستغرقه سجل التدفق للتحديث في ثوان، أي إذا كان 1.0، فإن دفق السجل سيعرض سجلات جديدة كل 1.0 ثانية";
+
+/* Credits */
+"Credits" = "الاعتمادات";
+
+/* Entry View Controller (Sections) */
+"Message" = "رسالة";
+"Process" = "العملية";
+"Sender"  = "المرسل";
+"Date"    = "التاريخ";
+"Other"   = "أخرى";
+"Category & Subsystem" = "الفئة والنظام الفرعي";
+
+/* Entry View Controller (Primary Text) */
+"Name" = "الاسم";
+"ID" = "معرف";
+"Path" = "مسار";
+"Timestamp (UNIX Time)" = "الطابع الزمني (توقيت UNIX)";
+"Message Type" = "نوع الرسالة";
+"Event Type" = "نوع الحدث";
+"Activity ID" = "معرّف النشاط";
+"Trace ID" = "معرّف التتبع";
+"Thread ID" = "معرّف السلسلة";
+
+/* Entry View Controller (Misc) */
+"Copy" = "نسخ"; /* copying item to clipboard */
+
+/* MessageEvent display texts */
+"Default" = "افتراضي";
+"Debug" = "تصحيح الاخطاء";
+"Info" = "معلومات";
+"Fault" = "عيب";
+"Error" = "خطأ";
+
+/* TextFilter mode descriptions */
+"Equal To" = "يساوي";
+"Not Equal To" = "لا يساوي";
+/* text contains another text */
+"Contains" = "يحتوي";
+/* text *doesn't* contain other text in it */
+"Doesn't Contain" = "لا يحتوي على";
+/* text starts with another text */
+"Starts With" = "يبدأ ب";
+/* text ends with another text */
+"Ends With" = "ينتهي ب";
+
+/* Background Mode (Application UI) */
+"Background Mode" = "وضع الخلفية";
+"Collect logs in background" = "جمع السجلات في الخلفية";
+"Collect logs in the background until.." = "جمع السجلات في الخلفية حتى..";
+"Keep collecting logs in the background" = "استمر في جمع السجلات في الخلفية";
+"For background mode, please authorize the app with Always-On Location Services" = "لأجل لوضع الخلفية ، يرجى تفويض التطبيق باستخدام خدمات الموقع التي تعمل دائما";
+
+/* Background Mode (User Notifications) */
+"Stopped" = "متوقف";
+"Pause" = "إيقاف مؤقت";
+"Couldn't start background mode" = "تعذر بدء تشغيل وضع الخلفية";
+"Antoine needs Always-On Location Authorization in order to enable Background Mode" = "يحتاج Antoine إلى تصريح موقع دائم التشغيل لتمكين وضع الخلفية";
+"Antoine is now collecting logs in the background" = "يقوم Antoine الآن بجمع السجلات في الخلفية";
+"App has stopped collecting logs in background" = "توقف التطبيق عن جمع السجلات في الخلفية";
+
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "من أجل الاستمرار في تلقي السجلات في الخلفية، يحتاج Antoine إلى أذونات الموقع لإبقاء التطبيق على قيد التشغيل في الخلفية، إذا كنت توافق، فاضغط على 'السماح أثناء استخدام التطبيق'";
+
+/* Stream Options */
+"Stream Options" = "خيارات التدفق";
+"All" = "الكل";
+"Show Messages before Stream was started" = "إظهار الرسائل قبل بدء التدفق";
+"Don't include sensitive data" = "عدم تضمين بيانات حساسة";
+"Include Debug Messages" = "تضمين رسائل تصحيح الأخطاء";
+"Include Info Messages" = "تضمين معلومات الرسائل";
+"Precise Timestamps" = "طوابع زمنية دقيقة";
+
+/* PreferredLanguageViewController */
+"Language" = "اللغة";
+"Restart Application for changes to fully apply" = "إعادة تشغيل التطبيق لتطبيق التغييرات بالكامل";
+"Use System Language" = "استخدام لغة النظام";

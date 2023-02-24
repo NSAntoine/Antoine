@@ -99,9 +99,8 @@ class EntryViewController: UIViewController {
             titleView.topAnchor.constraint(equalTo: view.topAnchor),
             
             labelsStackView.leadingAnchor.constraint(equalTo: titleView.layoutMarginsGuide.leadingAnchor, constant: 17),
-            
             labelsStackView.trailingAnchor.constraint(equalTo: titleView.layoutMarginsGuide.trailingAnchor),
-            labelsStackView.centerYAnchor.constraint(equalTo: titleView.layoutMarginsGuide.centerYAnchor)
+            labelsStackView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
         ])
     }
     

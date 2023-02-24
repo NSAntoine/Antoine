@@ -103,6 +103,9 @@
 		CE7CFC9829A908E000FDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE7CFC9929A908E000FDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE7CFC9A29A908E000FDABE9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7CFC9B29A9108C00FDABE9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE7CFC9C29A9108C00FDABE9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE7CFC9D29A9108C00FDABE9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE8380032944D981003759AD /* EntryFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFilterViewController.swift; sourceTree = "<group>"; };
 		CE8380042944D981003759AD /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		CE84DFFF2943C1EC00FE1E17 /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
@@ -366,6 +369,7 @@
 				ru,
 				sv,
 				fr,
+				ar,
 			);
 			mainGroup = CE5212372930A29B00521064;
 			packageReferences = (
@@ -447,6 +451,7 @@
 				CEBCCEC7299E0572006C3D23 /* ru */,
 				CE2C7C7929A8F7D200BA613D /* sv */,
 				CE7CFC9929A908E000FDABE9 /* fr */,
+				CE7CFC9C29A9108C00FDABE9 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				CEBCCEC6299E0572006C3D23 /* ru */,
 				CE2C7C7829A8F7D200BA613D /* sv */,
 				CE7CFC9829A908E000FDABE9 /* fr */,
+				CE7CFC9B29A9108C00FDABE9 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 				CEBCCEC8299E0572006C3D23 /* ru */,
 				CE2C7C7A29A8F7D200BA613D /* sv */,
 				CE7CFC9A29A908E000FDABE9 /* fr */,
+				CE7CFC9D29A9108C00FDABE9 /* ar */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

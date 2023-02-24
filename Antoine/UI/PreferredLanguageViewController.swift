@@ -73,7 +73,7 @@ class PreferredLanguageViewController: UITableViewController {
     func useSystemLanguageToggled(sender: UISwitch) {
         if sender.isOn {
             UserDefaults.standard.set(nil, forKey: "UserPreferredLanguageCode")
-            Bundle.preferredLocalizationBundle = .makeLocalizationBundle(preferredLanguageCode: nil)
+            Bundle.preferredLocalizationBundle = .makeLocalizationBundle()
             tableView.deleteSections([1], with: .fade)
         } else {
             Preferences.preferredLanguageCode = Locale.current.languageCode
