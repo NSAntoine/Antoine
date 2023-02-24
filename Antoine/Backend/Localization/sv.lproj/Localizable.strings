@@ -123,3 +123,6 @@
 "Language" = "Språk";
 "Restart Application for changes to fully apply" = "Starta om applikationen för att ändringar ska gälla fullt ut";
 "Use System Language" = "Använd systemspråk";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "Avbryt";

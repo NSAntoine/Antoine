@@ -44,7 +44,7 @@ class MenuItem {
                 for action in actions {
                     alertController.addAction(action)
                 }
-                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                alertController.addAction(UIAlertAction(title: .localized("Cancel"), style: .cancel))
                 
                 alertControllerAction(alertController)
             }

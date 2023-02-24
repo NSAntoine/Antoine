@@ -175,7 +175,7 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         case 0:
             return .localized("RefreshRateExplaination")
         case 1:
-            return .localized("Location Services need to be turned on in order for background mode to work")
+            return .localized("Antoine needs Always-On Location Authorization in order to enable Background Mode")
         default:
             return nil
         }

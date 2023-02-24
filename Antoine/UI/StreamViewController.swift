@@ -209,12 +209,12 @@ extension StreamViewController {
     /// Presents a UIAlertController for adding / removing stream options
     @objc
     private func presentActionSheetForStreanOptions() {
-        let alert = UIAlertController(title: "Stream Options", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: .localized("Stream Options"), message: nil, preferredStyle: .actionSheet)
         for item in titledStreamOptionsToMenuItems() {
             alert.addAction(item.uiAlertAction)
         }
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: .localized("Cancel"), style: .cancel))
         present(alert, animated: true)
     }
     
@@ -224,7 +224,7 @@ extension StreamViewController {
             
             return UIBarButtonItem(
                 image: UIImage(systemName: "list.bullet.rectangle"),
-                menu: MenuItem.makeMenu(title: "Stream Options", for: actions)
+                menu: MenuItem.makeMenu(title: .localized("Stream Options"), for: actions)
             )
         }
         

@@ -123,3 +123,6 @@
 "Language" = "اللغة";
 "Restart Application for changes to fully apply" = "إعادة تشغيل التطبيق لتطبيق التغييرات بالكامل";
 "Use System Language" = "استخدام لغة النظام";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "إلغاء";

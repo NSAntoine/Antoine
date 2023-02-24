@@ -122,3 +122,6 @@
 "Language" = "Language";
 "Restart Application for changes to fully apply" = "Restart Application for changes to fully apply";
 "Use System Language" = "Use System Language";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "Cancel";
