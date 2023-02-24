@@ -103,6 +103,13 @@
 "Antoine is now collecting logs in the background" = "Antoine собирает журналы в фоновом режиме";
 "App has stopped collecting logs in background" = "Приложение остановило сбор журналов в фоновом режиме";
 
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Для того, чтобы продолжать получать журналы в фоновом режиме, Antoine нужно разрешение геолокации для беспрерывной работы. Если вы согласны - нажмите на кнопку «Разрешить»";
+
 /* Stream Options */
 "Stream Options" = "Параметры журнала";
 "All" = "Все";

@@ -102,6 +102,13 @@
 "Antoine is now collecting logs in the background" = "Antoine is now collecting logs in the background";
 "App has stopped collecting logs in background" = "App has stopped collecting logs in background";
 
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "In order to continue receiving logs in the background, Antoine needs location permissions keep the app alive in the background, if you agree, press 'Allow While Using App'";
+
 /* Stream Options */
 "Stream Options" = "Stream Options";
 "All" = "All";
