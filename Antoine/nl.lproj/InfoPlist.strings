@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "Antoine heeft 'Sta toe tijdens het gebruik van de app' nodig om berichten te kunnen blijven verzamelen in de achtergrond.";

@@ -65,6 +65,9 @@
 
 /* Begin PBXFileReference section */
 		CE10620F299784A400BA3ADD /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		CE16F2D229A94F9A00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE16F2D329A94F9A00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE16F2D429A94F9B00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE29769729394BD200EAD1D0 /* OSActivityEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityEvent.h; sourceTree = "<group>"; };
 		CE29769829394C3A00EAD1D0 /* ActivityEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityEvents.h; sourceTree = "<group>"; };
 		CE29769929394D1300EAD1D0 /* OSActivityLogMessageEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityLogMessageEvent.h; sourceTree = "<group>"; };
@@ -370,6 +373,7 @@
 				fr,
 				ar,
 				ja,
+				nl,
 			);
 			mainGroup = CE5212372930A29B00521064;
 			packageReferences = (
@@ -453,6 +457,7 @@
 				CE7CFC9929A908E000FDABE9 /* fr */,
 				CE7CFC9C29A9108C00FDABE9 /* ar */,
 				CE366BF629A93165002A52C6 /* ja */,
+				CE16F2D329A94F9A00CE619A /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				CE7CFC9829A908E000FDABE9 /* fr */,
 				CE7CFC9B29A9108C00FDABE9 /* ar */,
 				CE366BF529A93165002A52C6 /* ja */,
+				CE16F2D229A94F9A00CE619A /* nl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				CE7CFC9A29A908E000FDABE9 /* fr */,
 				CE7CFC9D29A9108C00FDABE9 /* ar */,
 				CE366BF729A93165002A52C6 /* ja */,
+				CE16F2D429A94F9B00CE619A /* nl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

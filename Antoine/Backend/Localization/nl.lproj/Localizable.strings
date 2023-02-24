@@ -1,0 +1,128 @@
+/*
+ Localizable.strings
+ Antoine
+ 
+ Created by Serena on 12/02/2023.
+ Localized by Mineek
+ */
+
+/* Entry Filter View Controller (Navigation Title) */
+"Search Filter" = "Zoek Filter";
+
+/* Entry Filter View Controller (Section Titles) */
+"Process ID" = "Process ID";
+"Process Name" = "Process Naam";
+"Category" = "Categorie";
+"Subsystem" = "Subsysteem";
+"Allowed Types" = "Toegestaande types";
+
+/* Entry Filter View Controller (isEnabled Section Names) */
+"Filter by Message Text" = "Filter op inhoud";
+"Filter by Process ID" = "Filter op Process ID";
+"Filter by Process Name" = "Filter op Process Naam";
+"Filter by Category" = "Filter op Categorie";
+"Filter by Subsystem" = "Filter op Subsysteem";
+
+/* Entry Filter View Controller (UITextView Placeholders) */
+"Message text filter.." = "Inhoud text filter..";
+"Subsystem filter.." = "Subsysteem filter..";
+"Category filter.." = "Categorie filter..";
+"Process name filter.." = "Process naam filter..";
+
+/* Entry Filter View Controller (Other) */
+"Apply" = "Toepassen";
+"Mode" = "Modus";
+"Process ID entered must be a valid number" = "Ingetypte Process ID moet een nummer zijn!";
+
+/* Stream View Controller */
+"Stream" = "Stream";
+
+/* Preferences View Controller */
+"Preferences" = "Instellingen";
+"Reset" = "Reset";
+"Refresh Rate" = "Ververssnelheid";
+"Type Colors" = "Kleuren";
+"RefreshRateExplaination" = "Dit is de tijd dat de berichten erover doen om the verversen, als het bijvoorbeeld 1 seconden zou zijn dan zou elke 1 seconden een nieuw bericht komen.";
+
+/* Credits */
+"Credits" = "Credits";
+
+/* Entry View Controller (Sections) */
+"Message" = "Bericht";
+"Process" = "Process";
+"Sender"  = "Afzender";
+"Date"    = "Datum";
+"Other"   = "Anders";
+"Category & Subsystem" = "Categorie & Subsysteem";
+
+/* Entry View Controller (Primary Text) */
+"Name" = "Naam";
+"ID" = "ID";
+"Path" = "Pad";
+"Timestamp (UNIX Time)" = "Tijd (UNIX formaat)";
+"Message Type" = "Bericht Type";
+"Event Type" = "Event Type";
+"Activity ID" = "Activiteit ID";
+"Trace ID" = "Trace ID";
+"Thread ID" = "Thread ID";
+
+/* Entry View Controller (Misc) */
+"Copy" = "Kopieren"; /* copying item to clipboard */
+
+/* MessageEvent display texts */
+"Default" = "Default";
+"Debug" = "Debug";
+"Info" = "Info";
+"Fault" = "Probleem";
+"Error" = "Error";
+
+/* TextFilter mode descriptions */
+"Equal To" = "Gelijk aan";
+"Not Equal To" = "Niet gelijk aan";
+/* text contains another text */
+"Contains" = "Bevat";
+/* text *doesn't* contain other text in it */
+"Doesn't Contain" = "Bevat niet";
+/* text starts with another text */
+"Starts With" = "Begint met";
+/* text ends with another text */
+"Ends With" = "Eindigt met";
+
+/* Background Mode (Application UI) */
+"Background Mode" = "Achtergrond";
+"Collect logs in background" = "Verzamel berichten in de achtergrond";
+"Collect logs in the background until.." = "Verzamel berichten in de achtergrond tot...";
+"Keep collecting logs in the background" = "Blijf berichten in de achtergrond verzamelen";
+"For background mode, please authorize the app with Always-On Location Services" = "Om berichten in de achtergrond te verzamelen authorizeer de app met Locatie Services op Altijd Aan";
+
+/* Background Mode (User Notifications) */
+"Stopped" = "Gepauzeerd";
+"Pause" = "Pauzeer";
+"Couldn't start background mode" = "Kon niet achtergrond-modus starten";
+"Antoine needs Always-On Location Authorization in order to enable Background Mode" = "Antoine heeft Altijd Aan Locatie toegang nodig voor achtergrond modus.";
+"Antoine is now collecting logs in the background" = "Antoine is berichten aan het verzamelen in de achtergrond";
+"App has stopped collecting logs in background" = "Antoine is gestopt met berichten verzamelen in de achtergrond";
+
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Antoine heeft 'Sta toe tijdens het gebruik van de app' nodig om berichten te kunnen blijven verzamelen in de achtergrond.";
+
+/* Stream Options */
+"Stream Options" = "Stream Opties";
+"All" = "Alles";
+"Show Messages before Stream was started" = "Laat berichten zijn voordat de Stream start.";
+"Don't include sensitive data" = "Verberg sensitieve berichten";
+"Include Debug Messages" = "Laat Debug Berichten zien";
+"Include Info Messages" = "Laat Info Berichten zien";
+"Precise Timestamps" = "Precieze tijd";
+
+/* PreferredLanguageViewController */
+"Language" = "Taal";
+"Restart Application for changes to fully apply" = "Herstart Antoine om de verandering volledig te maken";
+"Use System Language" = "Gebruik Systeem Taal";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "Annuleer";
