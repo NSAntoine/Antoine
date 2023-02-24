@@ -121,7 +121,7 @@
 
 /* PreferredLanguageViewController */
 "Language" = "Язык";
-"Restart Application for changes to fully apply" = "Перезапустите Приложение что-бы изменения полностью применились";
+"Restart Application for changes to fully apply" = "Перезапустите приложение для применения изменений";
 "Use System Language" = "Использовать Системный Язык";
 
 /* MenuItems UIAlertController items */
