@@ -1,0 +1,128 @@
+/*
+ Localizable.strings
+ Antoine
+ 
+ Created by Serena on 12/02/2023.
+ Localized by plzdonthaxme
+ */
+
+/* Entry Filter View Controller (Navigation Title) */
+"Search Filter" = "検索フィルタ";
+
+/* Entry Filter View Controller (Section Titles) */
+"Process ID" = "プロセスID";
+"Process Name" = "プロセス名";
+"Category" = "カテゴリ";
+"Subsystem" = "サブシステム";
+"Allowed Types" = "許可されたタイプ";
+
+/* Entry Filter View Controller (isEnabled Section Names) */
+"Filter by Message Text" = "メッセージでフィルタ";
+"Filter by Process ID" = "プロセスIDでフィルタ";
+"Filter by Process Name" = "プロセス名でフィルタ";
+"Filter by Category" = "カテゴリでフィルタ";
+"Filter by Subsystem" = "サブシステムでフィルタ";
+
+/* Entry Filter View Controller (UITextView Placeholders) */
+"Message text filter.." = "メッセージフィルタ...";
+"Subsystem filter.." = "サブシステムフィルタ...";
+"Category filter.." = "カテゴリフィルタ...";
+"Process name filter.." = "プロセス名フィルタ...";
+
+/* Entry Filter View Controller (Other) */
+"Apply" = "適用";
+"Mode" = "モード";
+"Process ID entered must be a valid number" = "プロセスIDには番号だけが利用できます";
+
+/* Stream View Controller */
+"Stream" = "ストリーム";
+
+/* Preferences View Controller */
+"Preferences" = "環境設定";
+"Reset" = "リセット";
+"Refresh Rate" = "更新頻度";
+"Type Colors" = "タイプの色";
+"RefreshRateExplaination" = "これは、ログのストリームが更新される秒数です。例えば、1.0なら、ログのストリームは1.0秒ごとに新しいログを表示します";
+
+/* Credits */
+"Credits" = "クレジット";
+
+/* Entry View Controller (Sections) */
+"Message" = "メッセージ";
+"Process" = "プロセス";
+"Sender"  = "発信者";
+"Date"    = "日付";
+"Other"   = "その他";
+"Category & Subsystem" = "カテゴリとサブシステム";
+
+/* Entry View Controller (Primary Text) */
+"Name" = "名前";
+"ID" = "ID";
+"Path" = "パス";
+"Timestamp (UNIX Time)" = "タイムスタンプ (UNIX時間)";
+"Message Type" = "メッセージタイプ";
+"Event Type" = "イベントタイプ";
+"Activity ID" = "アクティビティID";
+"Trace ID" = "トレースID";
+"Thread ID" = "トレッドID";
+
+/* Entry View Controller (Misc) */
+"Copy" = "コピー"; /* copying item to clipboard */
+
+/* MessageEvent display texts */
+"Default" = "デファルト";
+"Debug" = "デバッグ";
+"Info" = "インフォ";
+"Fault" = "フォルト";
+"Error" = "エラー";
+
+/* TextFilter mode descriptions */
+"Equal To" = "一致する";
+"Not Equal To" = "一致しない";
+/* text contains another text */
+"Contains" = "含む";
+/* text *doesn't* contain other text in it */
+"Doesn't Contain" = "含まない";
+/* text starts with another text */
+"Starts With" = "始まる";
+/* text ends with another text */
+"Ends With" = "終わる";
+
+/* Background Mode (Application UI) */
+"Background Mode" = "バックグランドモード";
+"Collect logs in background" = "バックグランドでログを収集する";
+"Collect logs in the background until.." = "バックグランドでログを収集する制限..";
+"Keep collecting logs in the background" = "バックグラウンドでログを収集し続ける";
+"For background mode, please authorize the app with Always-On Location Services" = "バックグランドモードのため, このアプリを位置情報サービスを常に許可してください。";
+
+/* Background Mode (User Notifications) */
+"Stopped" = "停止";
+"Pause" = "一時停止";
+"Couldn't start background mode" = "バックグランドモードを開始できませんでした";
+"Antoine needs Always-On Location Authorization in order to enable Background Mode" = "Antoineはバックグランドモードのため常に位置情報サービスが必要です。 ";
+"Antoine is now collecting logs in the background" = "Antoineはバックグラウンドでログを収集を始めました";
+"App has stopped collecting logs in background" = "アプリはバックグラウンドでログの収集を停止しました";
+
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "ログをバックグラウンドで受信し続けるために、Antoineは位置情報の許可が必要です。同意する場合は「アプリの使用中は許可」を押してください。";
+
+/* Stream Options */
+"Stream Options" = "ストリームオプシオン";
+"All" = "全部";
+"Show Messages before Stream was started" = "ストリーム起動前のメッセージも表示";
+"Don't include sensitive data" = "機密データを含まない";
+"Include Debug Messages" = "デバッグメッセージを含む";
+"Include Info Messages" = "インフォメッセージを含む";
+"Precise Timestamps" = "高精度タイムスタンプ";
+
+/* PreferredLanguageViewController */
+"Language" = "言語";
+"Restart Application for changes to fully apply" = "変更を完全に適用するためにアプリケーションを再起動してください";
+"Use System Language" = "システム言語を使用する";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "キャンセル";

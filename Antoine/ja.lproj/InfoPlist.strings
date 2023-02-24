@@ -1,0 +1,9 @@
+/*
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "ログをバックグラウンドで受信し続けるために、Antoineは位置情報の許可が必要です。同意する場合は「アプリの使用中は許可」を押してください。";

@@ -165,6 +165,8 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
             return .localized("Type Colors")
         case 3:
             return .localized("Credits")
+        case 4:
+            return .localized("Language")
         default:
             return nil
         }

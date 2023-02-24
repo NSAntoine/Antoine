@@ -74,9 +74,10 @@
 		CE2C7C7A29A8F7D200BA613D /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE2EA756298E5AF900405660 /* CreditsPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsPerson.swift; sourceTree = "<group>"; };
 		CE318B1629645532002AB38D /* UniqueCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueCollection.swift; sourceTree = "<group>"; };
-		CE31B513294305360072C832 /* OSActivityStreamDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityStreamDelegate.h; sourceTree = "<group>"; };
-		CE31B514294305E50072C832 /* OSActivityStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityStream.h; sourceTree = "<group>"; };
 		CE3264752943CF0D00B35717 /* EntryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFilter.swift; sourceTree = "<group>"; };
+		CE366BF529A93165002A52C6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE366BF629A93165002A52C6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE366BF729A93165002A52C6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE3D876629991B4400DE9079 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE3EA2FD2944F71D00DC5AA8 /* TextFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFilter.swift; sourceTree = "<group>"; };
 		CE41217029446DE40010A5B6 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -147,8 +148,6 @@
 			children = (
 				CE29769729394BD200EAD1D0 /* OSActivityEvent.h */,
 				CE29769929394D1300EAD1D0 /* OSActivityLogMessageEvent.h */,
-				CE31B513294305360072C832 /* OSActivityStreamDelegate.h */,
-				CE31B514294305E50072C832 /* OSActivityStream.h */,
 				CE29769829394C3A00EAD1D0 /* ActivityEvents.h */,
 			);
 			path = ActivityEvents;
@@ -355,7 +354,7 @@
 				TargetAttributes = {
 					CE52123F2930A29B00521064 = {
 						CreatedOnToolsVersion = 14.1;
-						LastSwiftMigration = 1410;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -370,6 +369,7 @@
 				sv,
 				fr,
 				ar,
+				ja,
 			);
 			mainGroup = CE5212372930A29B00521064;
 			packageReferences = (
@@ -452,6 +452,7 @@
 				CE2C7C7929A8F7D200BA613D /* sv */,
 				CE7CFC9929A908E000FDABE9 /* fr */,
 				CE7CFC9C29A9108C00FDABE9 /* ar */,
+				CE366BF629A93165002A52C6 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -464,6 +465,7 @@
 				CE2C7C7829A8F7D200BA613D /* sv */,
 				CE7CFC9829A908E000FDABE9 /* fr */,
 				CE7CFC9B29A9108C00FDABE9 /* ar */,
+				CE366BF529A93165002A52C6 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -476,6 +478,7 @@
 				CE2C7C7A29A8F7D200BA613D /* sv */,
 				CE7CFC9A29A908E000FDABE9 /* fr */,
 				CE7CFC9D29A9108C00FDABE9 /* ar */,
+				CE366BF729A93165002A52C6 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 		CE5212552930A29C00521064 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -641,6 +645,7 @@
 		CE5212562930A29C00521064 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
