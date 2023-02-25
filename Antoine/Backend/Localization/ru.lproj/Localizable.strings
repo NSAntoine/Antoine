@@ -10,6 +10,7 @@
 "Search Filter" = "Фильтр поиска";
 
 /* Entry Filter View Controller (Section Titles) */
+"Enabled" = "Enabled";
 "Process ID" = "ID процесса";
 "Process Name" = "Имя процесса";
 "Category" = "Категория";
@@ -91,9 +92,10 @@
 /* Background Mode (Application UI) */
 "Background Mode" = "Фоновый режим";
 "Collect logs in background" = "Собирать журналы в фоновом режиме";
-"Collect logs in the background until.." = "Собирать журналы в фоновом режиме до..";
+"Stay active in background for.." = "Собирать журналы в фоновом режиме до..";
 "Keep collecting logs in the background" = "Продолжить собирать журналы в фоновом режиме";
 "For background mode, please authorize the app with Always-On Location Services" = "Antoine требуется постоянный доступ к геолокации, чтобы запустить фоновый режим";
+"Until manually disabled" = "Until manually disabled";
 
 /* Background Mode (User Notifications) */
 "Stopped" = "Остановлено";

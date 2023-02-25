@@ -64,6 +64,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE06B75129A9EDD800306677 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE06B75229A9EDD900306677 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE06B75329A9EDD900306677 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE10620F299784A400BA3ADD /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		CE16F2D229A94F9A00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE16F2D329A94F9A00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -374,6 +377,7 @@
 				ar,
 				ja,
 				nl,
+				ko,
 			);
 			mainGroup = CE5212372930A29B00521064;
 			packageReferences = (
@@ -458,6 +462,7 @@
 				CE7CFC9C29A9108C00FDABE9 /* ar */,
 				CE366BF629A93165002A52C6 /* ja */,
 				CE16F2D329A94F9A00CE619A /* nl */,
+				CE06B75229A9EDD900306677 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				CE7CFC9B29A9108C00FDABE9 /* ar */,
 				CE366BF529A93165002A52C6 /* ja */,
 				CE16F2D229A94F9A00CE619A /* nl */,
+				CE06B75129A9EDD800306677 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				CE7CFC9D29A9108C00FDABE9 /* ar */,
 				CE366BF729A93165002A52C6 /* ja */,
 				CE16F2D429A94F9B00CE619A /* nl */,
+				CE06B75329A9EDD900306677 /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

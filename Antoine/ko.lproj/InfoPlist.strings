@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "실시간으로 로그를 출력하기 위해선 위치권한이 필요합니다.
+동의 하시면 허용을 눌러주세요.";

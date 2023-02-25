@@ -83,8 +83,18 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         case (1, 1):
             let cell = UITableViewCell()
             
-            cell.textLabel?.text = .localized("Stay active in background for..")
-            cell.textLabel?.numberOfLines = 0
+            let label = UILabel()
+            label.text = .localized("Stay active in background for..")
+            label.numberOfLines = 0
+            label.translatesAutoresizingMaskIntoConstraints = false
+            cell.addSubview(label)
+            
+            NSLayoutConstraint.activate([
+                label.leadingAnchor.constraint(equalTo: cell.layoutMarginsGuide.leadingAnchor),
+                label.trailingAnchor.constraint(equalTo: cell.layoutMarginsGuide.trailingAnchor),
+                label.centerYAnchor.constraint(equalTo: cell.centerYAnchor)
+            ])
+            
             let button = makeBackgroundModeSelectionButton()
             cell.contentView.addSubview(button)
             NSLayoutConstraint.activate([

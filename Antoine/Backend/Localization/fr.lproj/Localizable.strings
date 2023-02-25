@@ -10,6 +10,7 @@
 "Search Filter" = "Filtres de recherche";
 
 /* Entry Filter View Controller (Section Titles) */
+"Enabled" = "Enabled";
 "Process ID" = "ID du programme";
 "Process Name" = "Nom du programme";
 "Category" = "Catégorie";
@@ -91,9 +92,10 @@
 /* Background Mode (Application UI) */
 "Background Mode" = "Mode en arrière-plan";
 "Collect logs in background" = "Collectionner les logs en arrière-plan";
-"Collect logs in the background until.." = "Collectionner les logs en arrière-plan pendant..";
+"Stay active in background for.." = "Collectionner les logs en arrière-plan pendant..";
 "Keep collecting logs in the background" = "Continuer de collecter les logs en arrière-plan";
 "For background mode, please authorize the app with Always-On Location Services" = "Pour utiliser le mode en arrière-plan, merci de donner à l'application l'autorisation d'avoir toujours accès à votre localisation";
+"Until manually disabled" = "Until manually disabled";
 
 /* Background Mode (User Notifications) */
 "Stopped" = "Stoppé";

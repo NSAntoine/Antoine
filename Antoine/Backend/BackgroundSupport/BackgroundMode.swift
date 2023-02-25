@@ -22,9 +22,15 @@ enum BackgroundMode: Codable, Hashable, CustomStringConvertible {
             formatter.unitsStyle = .full
             formatter.calendar = .current
             
+            if let languageCode = Preferences.preferredLanguageCode {
+                formatter.calendar?.locale = .init(
+                    identifier: "\(languageCode)_\(Locale.current.regionCode ?? "US")"
+                )
+            }
+            
             return formatter.string(from: time)!
         case .indefinitely:
-            return "Until manually disabled"
+            return .localized("Until manually disabled")
         }
     }
 }

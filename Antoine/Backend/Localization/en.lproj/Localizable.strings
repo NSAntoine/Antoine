@@ -9,6 +9,7 @@
 "Search Filter" = "Search Filter";
 
 /* Entry Filter View Controller (Section Titles) */
+"Enabled" = "Enabled";
 "Process ID" = "Process ID";
 "Process Name" = "Process Name";
 "Category" = "Category";
@@ -90,9 +91,10 @@
 /* Background Mode (Application UI) */
 "Background Mode" = "Background Mode";
 "Collect logs in background" = "Collect logs in background";
-"Collect logs in the background until.." = "Collect logs in the background until..";
+"Stay active in background for.." = "Stay active in background for..";
 "Keep collecting logs in the background" = "Keep collecting logs in the background";
 "For background mode, please authorize the app with Always-On Location Services" = "For background mode, please authorize the app with Always-on Location Services";
+"Until manually disabled" = "Until manually disabled";
 
 /* Background Mode (User Notifications) */
 "Stopped" = "Pause";

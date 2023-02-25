@@ -1,0 +1,131 @@
+/*
+ Localizable.strings
+ Antoine
+ 
+ Created by Serena on 12/02/2023.
+ Localized by TaekyungAncal
+ */
+
+/* Entry Filter View Controller (Navigation Title) */
+"Search Filter" = "검색필터";
+
+/* Entry Filter View Controller (Section Titles) */
+"Enabled" = "Enabled";
+"Process ID" = "프로세스 ID";
+"Process Name" = "프로세스 이름";
+"Category" = "카테고리";
+"Subsystem" = "서브시스템";
+"Allowed Types" = "허용된 타입";
+
+/* Entry Filter View Controller (isEnabled Section Names) */
+"Filter by Message Text" = "메시지 텍스트 필터링";
+"Filter by Process ID" = "프로세스 ID 필터링";
+"Filter by Process Name" = "프로세스 필터링";
+"Filter by Category" = "카테고리 필터링";
+"Filter by Subsystem" = "서브시스템 필터링";
+
+/* Entry Filter View Controller (UITextView Placeholders) */
+"Message text filter.." = "메시지 텍스트 필터";
+"Subsystem filter.." = "서브시스템 필터";
+"Category filter.." = "카테고리 필터";
+"Process name filter.." = "프로세스 이름 필터";
+
+/* Entry Filter View Controller (Other) */
+"Apply" = "Apply";
+"Mode" = "Mode";
+"Process ID entered must be a valid number" = "입력한 프로세스 ID는 유효한 숫자여야 합니다.";
+
+/* Stream View Controller */
+"Stream" = "스트림";
+
+/* Preferences View Controller */
+"Preferences" = "기본 설전";
+"Reset" = "초기화";
+"Refresh Rate" = "새로고침 비율";
+"Type Colors" = "유형 색깔";
+"RefreshRateExplaination" = "이것은 로그 스트림을 새로 고치는 데 걸리는 시간(초)입니다. 즉, 1.0이면 로그 스트림은 1.0초마다 새 로그를 표시합니다.";
+
+/* Credits */
+"Credits" = "크래닷";
+
+/* Entry View Controller (Sections) */
+"Message" = "메시지";
+"Process" = "작업";
+"Sender"  = "보냄";
+"Date"    = "날짜";
+"Other"   = "기타";
+"Category & Subsystem" = "카테고리 & 서브시스템";
+
+/* Entry View Controller (Primary Text) */
+"Name" = "이름";
+"ID" = "ID";
+"Path" = "위치";
+"Timestamp (UNIX Time)" = "타임스탬프( UNIX TIME)";
+"Message Type" = "메시지 유형";
+"Event Type" = "이벤트 유형";
+"Activity ID" = "작동 ID";
+"Trace ID" = "추적 ID";
+"Thread ID" = "스레드 ID";
+
+/* Entry View Controller (Misc) */
+"Copy" = "Copy"; /* copying item to clipboard */
+
+/* MessageEvent display texts */
+"Default" = "기본";
+"Debug" = "디버그";
+"Info" = "정보";
+"Fault" = "실패";
+"Error" = "오류";
+
+/* TextFilter mode descriptions */
+"Equal To" = "동일";
+"Not Equal To" = "동일하지 않음";
+/* text contains another text */
+"Contains" = "포함";
+/* text *doesn't* contain other text in it */
+"Doesn't Contain" = "포함하지 않음";
+/* text starts with another text */
+"Starts With" = "다음으로 시작";
+/* text ends with another text */
+"Ends With" = "다음으로 끝남";
+
+/* Background Mode (Application UI) */
+"Background Mode" = "백그라운드 모드";
+"Collect logs in background" = "백그라운드 로그 선택";
+"Collect logs in the background until.." = "백그라운드에서 로그 수집";
+"Keep collecting logs in the background" = "백그라운드에서 로그 수집 유지";
+"For background mode, please authorize the app with Always-On Location Services" = "백그라운드모드를 활성화 하려면 항상 위치서비스가 필요합니다.";
+"Until manually disabled" = "Until manually disabled";
+
+/* Background Mode (User Notifications) */
+"Stopped" = "멈춤";
+"Pause" = "멈춤";
+"Couldn't start background mode" = "백그라운드 모드를 시작하지 못함";
+"Antoine needs Always-On Location Authorization in order to enable Background Mode" = "Antoine는 백그라운드에서 로그를 수집하기 위해 항상 위치 권한을 필요로 합니다.";
+"Antoine is now collecting logs in the background" = "Antoine is now collecting logs in the background";
+"App has stopped collecting logs in background" = "App has stopped collecting logs in background";
+
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "실시간으로 로그를 수집하기 위해선 위치권한이 필요합니다.
+동의 하시면 허용을 눌러주세요.";
+
+/* Stream Options */
+"Stream Options" = "Stream Options";
+"All" = "All";
+"Show Messages before Stream was started" = "스트림이 시작했을때 알림표시";
+"Don't include sensitive data" = "에민한 데이터를 포함하지 않음";
+"Include Debug Messages" = "디버그 메시지 포함";
+"Include Info Messages" = "정보 메시지 포함";
+"Precise Timestamps" = "정밀한 타임스탭프";
+
+/* PreferredLanguageViewController */
+"Language" = "언어";
+"Restart Application for changes to fully apply" = "완벽히 적용하려면 앱을 껏다켜세요.";
+"Use System Language" = "시스템 언어 사용";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "취소";

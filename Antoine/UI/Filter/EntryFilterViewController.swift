@@ -110,7 +110,7 @@ extension EntryFilterViewController {
     /// adds initial item, being just the "Enabled" checkmark if there isn't already a filter set
     func addInitialItem() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        let enabledAction = Item(labelText: "Enabled", id: "FilterEnabled") { [unowned self] cell in
+        let enabledAction = Item(labelText: .localized("Enabled"), id: "FilterEnabled") { [unowned self] cell in
             let uiSwitch = UISwitch()
             uiSwitch.isOn = self.filter != nil
             uiSwitch.addTarget(self, action: #selector(self.isEnabledDidChange(sender:)), for: .valueChanged)

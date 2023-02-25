@@ -10,6 +10,7 @@
 "Search Filter" = "検索フィルタ";
 
 /* Entry Filter View Controller (Section Titles) */
+"Enabled" = "有効";
 "Process ID" = "プロセスID";
 "Process Name" = "プロセス名";
 "Category" = "カテゴリ";
@@ -91,9 +92,10 @@
 /* Background Mode (Application UI) */
 "Background Mode" = "バックグランドモード";
 "Collect logs in background" = "バックグランドでログを収集する";
-"Collect logs in the background until.." = "バックグランドでログを収集する制限..";
+"Stay active in background for.." = "バックグランドでログを収集する制限..";
 "Keep collecting logs in the background" = "バックグラウンドでログを収集し続ける";
 "For background mode, please authorize the app with Always-On Location Services" = "バックグランドモードのため, このアプリを位置情報サービスを常に許可してください。";
+"Until manually disabled" = "無期限";
 
 /* Background Mode (User Notifications) */
 "Stopped" = "停止";

@@ -10,6 +10,7 @@
 "Search Filter" = "تصفية البحث";
 
 /* Entry Filter View Controller (Section Titles) */
+"Enabled" = "Enabled";
 "Process ID" = "معرف العملية";
 "Process Name" = "اسم العملية";
 "Category" = "الفئة";
@@ -91,9 +92,10 @@
 /* Background Mode (Application UI) */
 "Background Mode" = "وضع الخلفية";
 "Collect logs in background" = "جمع السجلات في الخلفية";
-"Collect logs in the background until.." = "جمع السجلات في الخلفية حتى..";
+"Stay active in background for.." = "جمع السجلات في الخلفية حتى..";
 "Keep collecting logs in the background" = "استمر في جمع السجلات في الخلفية";
 "For background mode, please authorize the app with Always-On Location Services" = "لأجل لوضع الخلفية ، يرجى تفويض التطبيق باستخدام خدمات الموقع التي تعمل دائما";
+"Until manually disabled" = "Until manually disabled";
 
 /* Background Mode (User Notifications) */
 "Stopped" = "متوقف";
