@@ -76,7 +76,7 @@ class EntryFilterViewController: UIViewController {
         dataSource.defaultRowAnimation = .fade
         
         applyButton.backgroundColor = view.tintColor
-		applyButton.setTitle(.localized("Apply"), for: .normal)
+        applyButton.setTitle(.localized("Apply"), for: .normal)
         applyButton.setTitleColor(.white, for: .normal)
         applyButton.layer.shadowOpacity = 0.4
         applyButton.layer.cornerRadius = 20
@@ -212,77 +212,77 @@ private extension EntryFilterViewController {
     // makes the rest of the "is enabled" section items
     // ie, "Filter by message", to enable filtering by message
     func makeRestOfisEnabledSectionItems() -> [Item] {
-		let filterByMessage = __makeIsEnabledItemWithSwitch(
-			name: .localized("Filter by Message Text"),
-			id: "TextMessageFilteringEnabled") { [unowned self] uiSwitch in
-            uiSwitch.isOn = filter?.messageTextFilter != nil
-            uiSwitch.addAction(for: .valueChanged) { [unowned self] in
-                sectionToggleClicked(uiSwitch: uiSwitch,
-                                     section: .message,
-                                     writablePath: \.messageTextFilter,
-                                     newPropertyBuilder: TextFilter.empty,
-                                     sectionRebuilder: makeMessageFilterSectionItems)
-                
+        let filterByMessage = __makeIsEnabledItemWithSwitch(
+            name: .localized("Filter by Message Text"),
+            id: "TextMessageFilteringEnabled") { [unowned self] uiSwitch in
+                uiSwitch.isOn = filter?.messageTextFilter != nil
+                uiSwitch.addAction(for: .valueChanged) { [unowned self] in
+                    sectionToggleClicked(uiSwitch: uiSwitch,
+                                         section: .message,
+                                         writablePath: \.messageTextFilter,
+                                         newPropertyBuilder: TextFilter.empty,
+                                         sectionRebuilder: makeMessageFilterSectionItems)
+                    
+                }
             }
-        }
         
         let filterByPID = __makeIsEnabledItemWithSwitch(
-			name: .localized("Filter by Process ID"),
-			id: "FilterByProcessIDEnabled") { uiSwitch in
-            uiSwitch.addAction(for: .valueChanged) { [unowned self] in
-                sectionToggleClicked(uiSwitch: uiSwitch,
-                                     section: .processID,
-                                     writablePath: \.pid,
-                                     newPropertyBuilder: nil,
-                                     sectionRebuilder: makeProcessIDFilterSectionItems)
+            name: .localized("Filter by Process ID"),
+            id: "FilterByProcessIDEnabled") { uiSwitch in
+                uiSwitch.addAction(for: .valueChanged) { [unowned self] in
+                    sectionToggleClicked(uiSwitch: uiSwitch,
+                                         section: .processID,
+                                         writablePath: \.pid,
+                                         newPropertyBuilder: nil,
+                                         sectionRebuilder: makeProcessIDFilterSectionItems)
+                }
             }
-        }
         
         let filterByProcessName = __makeIsEnabledItemWithSwitch(
-			name: .localized("Filter by Process Name"),
-			id: "FilterByProcessNameEnabled") { [unowned self] uiSwitch in
-            uiSwitch.isOn = filter?.processFilter != nil
-            uiSwitch.addAction(for: .valueChanged) { [unowned self] in
-                sectionToggleClicked(uiSwitch: uiSwitch,
-                                     section: .processName,
-                                     writablePath: \.processFilter,
-                                     newPropertyBuilder: TextFilter.empty,
-                                     sectionRebuilder: makeProcessNameFilterSectionItems)
+            name: .localized("Filter by Process Name"),
+            id: "FilterByProcessNameEnabled") { [unowned self] uiSwitch in
+                uiSwitch.isOn = filter?.processFilter != nil
+                uiSwitch.addAction(for: .valueChanged) { [unowned self] in
+                    sectionToggleClicked(uiSwitch: uiSwitch,
+                                         section: .processName,
+                                         writablePath: \.processFilter,
+                                         newPropertyBuilder: TextFilter.empty,
+                                         sectionRebuilder: makeProcessNameFilterSectionItems)
+                }
+                
             }
-            
-        }
         
         let filterByCategory = __makeIsEnabledItemWithSwitch(
-			name: .localized("Filter by Category"),
-			id: "FilterByCategory") { [unowned self] uiSwitch in
-            uiSwitch.isOn = filter?.categoryFilter != nil
-            
-            uiSwitch.addAction(for: .valueChanged) { [unowned self] in
-                sectionToggleClicked(uiSwitch: uiSwitch,
-                                     section: .category,
-                                     writablePath: \.categoryFilter,
-                                     newPropertyBuilder: TextFilter.empty,
-                                     sectionRebuilder: makeCategorySectionItems)
+            name: .localized("Filter by Category"),
+            id: "FilterByCategory") { [unowned self] uiSwitch in
+                uiSwitch.isOn = filter?.categoryFilter != nil
+                
+                uiSwitch.addAction(for: .valueChanged) { [unowned self] in
+                    sectionToggleClicked(uiSwitch: uiSwitch,
+                                         section: .category,
+                                         writablePath: \.categoryFilter,
+                                         newPropertyBuilder: TextFilter.empty,
+                                         sectionRebuilder: makeCategorySectionItems)
+                }
             }
-        }
         
         
         let filterBySubsystem = __makeIsEnabledItemWithSwitch(
-			name: .localized("Filter by Subsystem"),
-			id: "FilterBySubsystem") { [unowned self] uiSwitch in
-            uiSwitch.isOn = filter?.subsystemFilter != nil
-            uiSwitch.addAction(for: .valueChanged) { [unowned self] in
-                sectionToggleClicked(uiSwitch: uiSwitch,
-                                     section: .subsystem,
-                                     writablePath: \.subsystemFilter,
-                                     newPropertyBuilder: TextFilter.empty,
-                                     sectionRebuilder: makeSubsystemSectionItems)
+            name: .localized("Filter by Subsystem"),
+            id: "FilterBySubsystem") { [unowned self] uiSwitch in
+                uiSwitch.isOn = filter?.subsystemFilter != nil
+                uiSwitch.addAction(for: .valueChanged) { [unowned self] in
+                    sectionToggleClicked(uiSwitch: uiSwitch,
+                                         section: .subsystem,
+                                         writablePath: \.subsystemFilter,
+                                         newPropertyBuilder: TextFilter.empty,
+                                         sectionRebuilder: makeSubsystemSectionItems)
+                }
             }
-        }
         
         return [filterByMessage, filterByProcessName, filterByCategory, filterBySubsystem, filterByPID]
     }
-        
+    
     // makes the items under the "Message" section
     func makeMessageFilterSectionItems() -> [Item] {
         guard let messageTextFilter = filter?.messageTextFilter else {
@@ -290,8 +290,8 @@ private extension EntryFilterViewController {
         }
         
         return makeTextViewAndModeSection(textView: _makeGenericTextView(for: .message, text: messageTextFilter.text), toEdit: messageTextFilter) { [unowned self] newMode in
-			let newFilter = TextFilter(text: filter?.messageTextFilter?.text ?? "", mode: newMode)
-			newModeSelected(section: .message, sectionRebuilder: makeMessageFilterSectionItems, writableKeyPath: \.messageTextFilter, newItem: newFilter)
+            let newFilter = TextFilter(text: filter?.messageTextFilter?.text ?? "", mode: newMode)
+            newModeSelected(section: .message, sectionRebuilder: makeMessageFilterSectionItems, writableKeyPath: \.messageTextFilter, newItem: newFilter)
         }
     }
     
@@ -305,11 +305,11 @@ private extension EntryFilterViewController {
     }
     
     func makeProcessIDFilterSectionItems() -> [Item] {
-		let pidTextFieldItem = Item(labelText: .localized("Process ID"), id: "PIDTextField") { [unowned self] cell in
-			let textField = _makeGenericTextField(text: filter?.pid?.description, placeholder: .localized("Process ID"))
+        let pidTextFieldItem = Item(labelText: .localized("Process ID"), id: "PIDTextField") { [unowned self] cell in
+            let textField = _makeGenericTextField(text: filter?.pid?.description, placeholder: .localized("Process ID"))
             textField.addAction(for: .editingDidEnd) { [unowned self] in
                 guard let text = textField.text, let newPid = pid_t(text) else {
-					errorAlert(title: .localized("Process ID entered must be a valid number"), description: nil)
+                    errorAlert(title: .localized("Process ID entered must be a valid number"), description: nil)
                     textField.text = nil
                     return
                 }
@@ -334,18 +334,18 @@ private extension EntryFilterViewController {
         }
         
         return makeTextViewAndModeSection(textView: _makeGenericTextView(for: .category, text: categoryFilter.text), toEdit: categoryFilter) { [unowned self] newMode in
-			let newFilter = TextFilter(text: filter?.categoryFilter?.text ?? "", mode: newMode)
-			newModeSelected(section: .category,
-							sectionRebuilder: makeCategorySectionItems,
-							writableKeyPath: \.categoryFilter, newItem: newFilter)
-			/*
-            let existingText = filter?.categoryFilter?.text ?? ""
-            filter?.categoryFilter = TextFilter(text: existingText, mode: newMode)
-            
-            var snapshot = dataSource.snapshot()
-            snapshot.reloadItems(inSection: .category, rebuildWith: makeCategorySectionItems())
-            dataSource.apply(snapshot)
-			 */
+            let newFilter = TextFilter(text: filter?.categoryFilter?.text ?? "", mode: newMode)
+            newModeSelected(section: .category,
+                            sectionRebuilder: makeCategorySectionItems,
+                            writableKeyPath: \.categoryFilter, newItem: newFilter)
+            /*
+             let existingText = filter?.categoryFilter?.text ?? ""
+             filter?.categoryFilter = TextFilter(text: existingText, mode: newMode)
+             
+             var snapshot = dataSource.snapshot()
+             snapshot.reloadItems(inSection: .category, rebuildWith: makeCategorySectionItems())
+             dataSource.apply(snapshot)
+             */
         }
     }
     
@@ -357,9 +357,9 @@ private extension EntryFilterViewController {
         return makeTextViewAndModeSection(textView: _makeGenericTextView(for: .subsystem, text: subsystemFilter.text), toEdit: subsystemFilter) { [unowned self] newMode in
             let newFilter = TextFilter(text: filter?.subsystemFilter?.text ?? "", mode: newMode)
             
-			newModeSelected(section: .subsystem,
-							sectionRebuilder: makeSubsystemSectionItems,
-							writableKeyPath: \.subsystemFilter, newItem: newFilter)
+            newModeSelected(section: .subsystem,
+                            sectionRebuilder: makeSubsystemSectionItems,
+                            writableKeyPath: \.subsystemFilter, newItem: newFilter)
         }
     }
     
@@ -371,10 +371,10 @@ private extension EntryFilterViewController {
         return makeTextViewAndModeSection(textView: _makeGenericTextView(for: .process, text: processFilter.text), toEdit: processFilter) { [unowned self] newMode in
             let newFilter = TextFilter(text: filter?.processFilter?.text ?? "", mode: newMode)
             
-			newModeSelected(section: .processName,
-							sectionRebuilder: makeProcessNameFilterSectionItems,
-							writableKeyPath: \.processFilter,
-							newItem: newFilter)
+            newModeSelected(section: .processName,
+                            sectionRebuilder: makeProcessNameFilterSectionItems,
+                            writableKeyPath: \.processFilter,
+                            newItem: newFilter)
         }
     }
     
@@ -413,7 +413,7 @@ private extension EntryFilterViewController {
             __setupTextView(forCell: cell, textView: textView)
         }
         
-		let modeItem = Item(labelText: .localized("Mode"), id: "\(senderFunction)=\(filterToEdit.mode)") { [unowned self] cell in
+        let modeItem = Item(labelText: .localized("Mode"), id: "\(senderFunction)=\(filterToEdit.mode)") { [unowned self] cell in
             let image = UIImage(systemName: "chevron.up.chevron.down")
             cell.addChoiceButton(text: filterToEdit.mode.description, image: image) { button in
                 let items = __menuItemsForAllModes(selectedMode: filterToEdit.mode, handler: newModeCompletion)
@@ -428,91 +428,91 @@ private extension EntryFilterViewController {
 }
 
 extension EntryFilterViewController {
-	// MARK: - Creating commonly used views
-	private func _makeGenericTextView(for type: TextViewType, text: String?) -> UITextView {
-		let textView = UITextView()
-		
-		textView.backgroundColor = .secondarySystemGroupedBackground
-		textView.tag = type.rawValue
-		textView.delegate = self
-		textView.autocorrectionType = .no
-		textView.textContainerInset = .zero
-		textView.setContentCompressionResistancePriority(.required, for: .vertical)
-		textView.font = .monospacedSystemFont(ofSize: 15, weight: .medium)
-		textView.inputAccessoryView = _makeToolbar(for: textView)
-		textView.translatesAutoresizingMaskIntoConstraints = false
-		
-		// placeholder text is empty
-		if text?.isEmpty ?? true {
-			textView.textColor = .lightGray
-			textView.text = type.placeholder
-		} else {
-			textView.text = text
-		}
-		
-		return textView
-	}
-	
-	private func _makeGenericTextField(text: String?, placeholder: String?, type: UIKeyboardType = .numberPad) -> UITextField {
-		let textField = UITextField()
-		
-		textField.text = text
-		textField.placeholder = placeholder
-		textField.inputAccessoryView = _makeToolbar(for: textField)
-		textField.keyboardType = type
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		return textField
-	}
-	
-	private func _makeToolbar(for responder: UIResponder) -> UIToolbar {
-		let toolbar = UIToolbar()
-		let doneButton = UIButton()
-		doneButton.setTitleColor(view.tintColor, for: .normal)
-		doneButton.setTitle("Done", for: .normal)
-		
-		doneButton.addAction(for: .touchUpInside) {
-			responder.resignFirstResponder()
-		}
-		
-		let items = [
-			// so that the done button is setup to the right
-			UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-			// the done button
-			UIBarButtonItem(customView: doneButton)
-		]
-		
-		toolbar.setItems(items, animated: true)
-		toolbar.sizeToFit()
-		return toolbar
-	}
-	
-	private func __menuItemsForAllModes(selectedMode: TextFilter.Mode,
-										handler: @escaping (TextFilter.Mode) -> Void) -> [MenuItem] {
-		return TextFilter.Mode.allCasesSectioned.map { modes in
-			let items = modes.map { mode in
-				return MenuItem(title: mode.description, image: nil, isEnabled: selectedMode == mode) {
-					handler(mode)
-				}
-			}
-			
-			return MenuItem(items: items)
-		}
-	}
-	
-	private func __setupTextView(forCell cell: UITableViewCell, textView: UITextView) {
-		textView.translatesAutoresizingMaskIntoConstraints = false
-		cell.contentView.addSubview(textView)
-		
-		let bottomAnchorConstraint = cell
-			.contentView
-			.layoutMarginsGuide
-			.bottomAnchor.constraint(equalToSystemSpacingBelow: textView.lastBaselineAnchor, multiplier: 1)
-		
-		NSLayoutConstraint.activate([
-			textView.leadingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.leadingAnchor),
-			textView.trailingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.trailingAnchor),
-			textView.topAnchor.constraint(equalTo: cell.layoutMarginsGuide.topAnchor),
-			bottomAnchorConstraint
-		])
-	}
+    // MARK: - Creating commonly used views
+    private func _makeGenericTextView(for type: TextViewType, text: String?) -> UITextView {
+        let textView = UITextView()
+        
+        textView.backgroundColor = .secondarySystemGroupedBackground
+        textView.tag = type.rawValue
+        textView.delegate = self
+        textView.autocorrectionType = .no
+        textView.textContainerInset = .zero
+        textView.setContentCompressionResistancePriority(.required, for: .vertical)
+        textView.font = .monospacedSystemFont(ofSize: 15, weight: .medium)
+        textView.inputAccessoryView = _makeToolbar(for: textView)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // placeholder text is empty
+        if text?.isEmpty ?? true {
+            textView.textColor = .lightGray
+            textView.text = type.placeholder
+        } else {
+            textView.text = text
+        }
+        
+        return textView
+    }
+    
+    private func _makeGenericTextField(text: String?, placeholder: String?, type: UIKeyboardType = .numberPad) -> UITextField {
+        let textField = UITextField()
+        
+        textField.text = text
+        textField.placeholder = placeholder
+        textField.inputAccessoryView = _makeToolbar(for: textField)
+        textField.keyboardType = type
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }
+    
+    private func _makeToolbar(for responder: UIResponder) -> UIToolbar {
+        let toolbar = UIToolbar()
+        let doneButton = UIButton()
+        doneButton.setTitleColor(view.tintColor, for: .normal)
+        doneButton.setTitle("Done", for: .normal)
+        
+        doneButton.addAction(for: .touchUpInside) {
+            responder.resignFirstResponder()
+        }
+        
+        let items = [
+            // so that the done button is setup to the right
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            // the done button
+            UIBarButtonItem(customView: doneButton)
+        ]
+        
+        toolbar.setItems(items, animated: true)
+        toolbar.sizeToFit()
+        return toolbar
+    }
+    
+    private func __menuItemsForAllModes(selectedMode: TextFilter.Mode,
+                                        handler: @escaping (TextFilter.Mode) -> Void) -> [MenuItem] {
+        return TextFilter.Mode.allCasesSectioned.map { modes in
+            let items = modes.map { mode in
+                return MenuItem(title: mode.description, image: nil, isEnabled: selectedMode == mode) {
+                    handler(mode)
+                }
+            }
+            
+            return MenuItem(items: items)
+        }
+    }
+    
+    private func __setupTextView(forCell cell: UITableViewCell, textView: UITextView) {
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        cell.contentView.addSubview(textView)
+        
+        let bottomAnchorConstraint = cell
+            .contentView
+            .layoutMarginsGuide
+            .bottomAnchor.constraint(equalToSystemSpacingBelow: textView.lastBaselineAnchor, multiplier: 1)
+        
+        NSLayoutConstraint.activate([
+            textView.leadingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.trailingAnchor),
+            textView.topAnchor.constraint(equalTo: cell.layoutMarginsGuide.topAnchor),
+            bottomAnchorConstraint
+        ])
+    }
 }

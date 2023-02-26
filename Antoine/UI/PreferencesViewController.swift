@@ -86,22 +86,13 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
             let label = UILabel()
             label.text = .localized("Stay active in background for..")
             label.numberOfLines = 0
-            label.translatesAutoresizingMaskIntoConstraints = false
-            cell.addSubview(label)
-            
-            NSLayoutConstraint.activate([
-                label.leadingAnchor.constraint(equalTo: cell.layoutMarginsGuide.leadingAnchor),
-                label.trailingAnchor.constraint(equalTo: cell.layoutMarginsGuide.trailingAnchor),
-                label.centerYAnchor.constraint(equalTo: cell.centerYAnchor)
-            ])
             
             let button = makeBackgroundModeSelectionButton()
-            cell.contentView.addSubview(button)
-            NSLayoutConstraint.activate([
-                button.trailingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.trailingAnchor),
-                button.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor)
-            ])
+            let stackView = UIStackView(arrangedSubviews: [label, button])
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            cell.contentView.addSubview(stackView)
             
+            stackView.constraintCompletely(to: cell.contentView.layoutMarginsGuide)
             return cell
         case (2, _):
             let cell = UITableViewCell()
@@ -131,7 +122,7 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func makeBackgroundModeSelectionButton() -> UIButton {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
         // force unwrapped because we should never be here if it's nil
         let item = Preferences.backgroundMode!

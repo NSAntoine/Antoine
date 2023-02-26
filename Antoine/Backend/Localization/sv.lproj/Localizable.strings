@@ -69,6 +69,7 @@
 
 /* Entry View Controller (Misc) */
 "Copy" = "Kopiera"; /* copying item to clipboard */
+"Open in %@" = "Open in %@";
 
 /* MessageEvent display texts */
 "Default" = "Standard";

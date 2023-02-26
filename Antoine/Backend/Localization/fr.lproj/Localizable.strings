@@ -1,5 +1,5 @@
 /*
- Localizable.strings
+ Localizable.strings (French)
  Antoine
  
  Created by Serena on 12/02/2023.
@@ -69,6 +69,7 @@
 
 /* Entry View Controller (Misc) */
 "Copy" = "Copier"; /* copying item to clipboard */
+"Open in %@" = "Open in %@";
 
 /* MessageEvent display texts */
 "Default" = "Défaut";

@@ -5,6 +5,7 @@
 //  Created by Serena on 18/01/2023.
 //
 
+import UIKit
 import Foundation
 
 extension DateFormatter {
@@ -48,6 +49,10 @@ extension Bundle {
 extension String {
     static func localized(_ name: String) -> String {
         return NSLocalizedString(name, bundle: .preferredLocalizationBundle, comment: "")
+    }
+    
+    static func localized(_ name: String, arguments: CVarArg...) -> String {
+        return String(format: NSLocalizedString(name, bundle: .preferredLocalizationBundle, comment: ""), arguments: arguments)
     }
     
     func localized() -> String {

@@ -358,7 +358,7 @@ extension EntryViewController: UITableViewDelegate {
             guard let value = dataSource.itemIdentifier(for: indexPath) else { return nil }
             
             // Action to copy the value selected
-            let copyAction = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { _ in
+            let copyAction = UIAction(title: .localized("Copy"), image: UIImage(systemName: "doc.on.doc")) { _ in
                 UIPasteboard.general.string = value.secondaryText
             }
             
@@ -371,7 +371,7 @@ extension EntryViewController: UITableViewDelegate {
                 let santanderURL = URL(string: "santander://\(suitablePath)")!
                 
                 if UIApplication.shared.canOpenURL(filzaURL) {
-                    let filzaOpenAction = UIAction(title: "Open in Filza") { _ in
+                    let filzaOpenAction = UIAction(title: .localized("Open in %@", arguments: "Filza")) { _ in
                         UIApplication.shared.open(filzaURL)
                     }
                     
@@ -379,7 +379,8 @@ extension EntryViewController: UITableViewDelegate {
                 }
                 
                 if UIApplication.shared.canOpenURL(santanderURL) {
-                    let santanderOpenAction = UIAction(title: "Open in Santander") { _ in
+                    let santanderOpenAction = UIAction(
+                        title: .localized("Open in %@", arguments: "Santander")) { _ in
                         UIApplication.shared.open(santanderURL)
                     }
                     
