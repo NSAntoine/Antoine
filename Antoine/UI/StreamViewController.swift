@@ -149,18 +149,6 @@ class StreamViewController: UIViewController {
         present(UINavigationController(rootViewController: PreferencesViewController(nibName: nil, bundle: nil)), animated: true)
     }
     
-    @objc
-    func presentFilterVC() {
-        let filterVC = EntryFilterViewController(filter: filter) { [unowned self] filter in
-            self.filter = filter
-            logStream.cancel()
-            logStream.start(options: options)
-        }
-        
-        let vc = UINavigationController(rootViewController: filterVC)
-        present(vc, animated: true)
-    }
-    
     // override present(_:, animated:) so that when we want to present a view controller
     // and one is already present,
     // dismiss the already-presented view controller, then show our view controller
@@ -176,6 +164,21 @@ class StreamViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension StreamViewController: EntryFilterViewControllerDelegate {
+    // MARK: - Filter stuff
+    @objc
+    func presentFilterVC() {
+        let filterVC = EntryFilterViewController(filter: filter)
+        filterVC.delegate = self
+        let vc = UINavigationController(rootViewController: filterVC)
+        present(vc, animated: true)
+    }
+    
+    func didFinishEditing(_ controller: EntryFilterViewController) {
+        filter = controller.filter
     }
 }
 

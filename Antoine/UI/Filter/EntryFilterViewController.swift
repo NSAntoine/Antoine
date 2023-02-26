@@ -15,14 +15,13 @@ class EntryFilterViewController: UIViewController {
     /// note: if this filter is nil, that means the user has decided to not use a filter
     var filter: EntryFilter?
     
-    typealias DismissHandler = (EntryFilter?) -> ()
-    var dismissHandler: DismissHandler
+    
+    weak var delegate: EntryFilterViewControllerDelegate?
     
     lazy var applyButton = UIButton(type: .system)
     
-    init(filter: EntryFilter? = Preferences.entryFilter, dismissHandler: @escaping DismissHandler) {
+    init(filter: EntryFilter? = Preferences.entryFilter) {
         self.filter = filter
-        self.dismissHandler = dismissHandler
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -62,7 +61,7 @@ class EntryFilterViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         Preferences.entryFilter = filter
-        dismissHandler(filter)
+        delegate?.didFinishEditing(self)
     }
     
     // layout the table view

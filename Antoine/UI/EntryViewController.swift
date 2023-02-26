@@ -52,6 +52,8 @@ class EntryViewController: UIViewController {
         
         setupTitleView()
         setupTableView()
+        
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

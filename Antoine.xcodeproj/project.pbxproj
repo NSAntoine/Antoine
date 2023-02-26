@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE106210299784A400BA3ADD /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10620F299784A400BA3ADD /* CreditsView.swift */; };
+		CE201B2829AB66B9005A3AC6 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE201B2729AB66B6005A3AC6 /* Delegate.swift */; };
 		CE29769B29394DCC00EAD1D0 /* StreamEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29769A29394DCC00EAD1D0 /* StreamEntry.swift */; };
 		CE2EA757298E5AF900405660 /* CreditsPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EA756298E5AF900405660 /* CreditsPerson.swift */; };
 		CE318B1729645532002AB38D /* UniqueCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE318B1629645532002AB38D /* UniqueCollection.swift */; };
@@ -71,6 +72,7 @@
 		CE16F2D229A94F9A00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE16F2D329A94F9A00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE16F2D429A94F9B00CE619A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE201B2729AB66B6005A3AC6 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		CE29769729394BD200EAD1D0 /* OSActivityEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityEvent.h; sourceTree = "<group>"; };
 		CE29769829394C3A00EAD1D0 /* ActivityEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityEvents.h; sourceTree = "<group>"; };
 		CE29769929394D1300EAD1D0 /* OSActivityLogMessageEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSActivityLogMessageEvent.h; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				CE8380032944D981003759AD /* EntryFilterViewController.swift */,
 				CEEA85FF294B9BAF00B0F607 /* TextViewDelegate.swift */,
 				CE8380042944D981003759AD /* DataSource.swift */,
+				CE201B2729AB66B6005A3AC6 /* Delegate.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				CE3264762943CF0D00B35717 /* EntryFilter.swift in Sources */,
 				CE4E0F2229349B930070E09A /* StreamEvent.swift in Sources */,
 				CE6199452997F9AE00CF6C55 /* LocationController.swift in Sources */,
+				CE201B2829AB66B9005A3AC6 /* Delegate.swift in Sources */,
 				CEA75A14293B3BD500E82B2B /* ActivityStreamDelegate.swift in Sources */,
 				CE41217129446DE40010A5B6 /* Storage.swift in Sources */,
 				CE3EA2FE2944F71D00DC5AA8 /* TextFilter.swift in Sources */,

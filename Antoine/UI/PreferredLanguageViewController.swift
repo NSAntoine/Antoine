@@ -57,7 +57,7 @@ class PreferredLanguageViewController: UITableViewController {
         return indexPath.section == 1
     }
     
-    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.section == 1 else { return }
         let languageSelected = languages[indexPath.row]
         Preferences.preferredLanguageCode = languageSelected.languageCode

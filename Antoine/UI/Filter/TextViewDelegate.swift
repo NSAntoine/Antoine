@@ -33,6 +33,25 @@ extension EntryFilterViewController: UITextViewDelegate {
             textView.text = nil
             textView.textColor = .label
         }
+        
+        // scroll to the section of the textView
+        var sectionToScrollTo: Section
+        if let type = TextViewType(rawValue: textView.tag) {
+            switch type {
+            case .process:
+                sectionToScrollTo = .processName
+            case .message:
+                sectionToScrollTo = .message
+            case .category:
+                sectionToScrollTo = .category
+            case .subsystem:
+                sectionToScrollTo = .subsystem
+            }
+            
+            if let section = dataSource.snapshot().indexOfSection(sectionToScrollTo) {
+                tableView.scrollToRow(at: IndexPath(row: 0, section: section), at: .top, animated: true)
+            }
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -40,13 +59,21 @@ extension EntryFilterViewController: UITextViewDelegate {
         
         switch type {
         case .message:
-            filter?.messageTextFilter?.text = textView.text
+            let newFilter = TextFilter(text: textView.text,
+                                       mode: filter?.messageTextFilter?.mode ?? .contains)
+            filter?.messageTextFilter = newFilter
         case .process:
-            filter?.processFilter?.text = textView.text
+            let newFilter = TextFilter(text: textView.text,
+                                       mode: filter?.processFilter?.mode ?? .contains)
+            filter?.processFilter = newFilter
         case .category:
-            filter?.categoryFilter?.text = textView.text
+            let newFilter = TextFilter(text: textView.text,
+                                       mode: filter?.categoryFilter?.mode ?? .contains)
+            filter?.categoryFilter = newFilter
         case .subsystem:
-            filter?.subsystemFilter?.text = textView.text
+            let newFilter = TextFilter(text: textView.text,
+                                       mode: filter?.subsystemFilter?.mode ?? .contains)
+            filter?.subsystemFilter = newFilter
         }
         
         if textView.text.isEmpty {

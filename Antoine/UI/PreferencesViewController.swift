@@ -202,12 +202,11 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         }
     }
     
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 2:
             colorSectionItemTapped(row: indexPath.row)
         case 3:
-            //tableView.deselectRow(at: indexPath, animated: true)
             navigationController?.pushViewController(UIHostingController(rootView: CreditsView()), animated: true)
         case 4:
             navigationController?.pushViewController(PreferredLanguageViewController(style: .insetGrouped),
@@ -215,6 +214,8 @@ extension PreferencesViewController: UITableViewDataSource, UITableViewDelegate 
         default:
             break
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
