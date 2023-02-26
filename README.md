@@ -1,4 +1,5 @@
 # Antoine
+### Available on Chariz: https://chariz.com/get/antoine
 ## *The iOS Console.app*
 An OSLog UI for iOS & iPadOS devices, Antoine allows you to view System Logs in real time, with the ability to filter logs by process, message, type, etc, as well additional stream options.
 
