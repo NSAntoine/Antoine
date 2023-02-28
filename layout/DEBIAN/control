@@ -1,6 +1,6 @@
 Package: com.serena.antoine
 Name: Antoine
-Version: 1.0
+Version: 1.1
 Architecture: iphoneos-arm
 Description: An Application to view System Logs, commonly known as syslog or OSLog, in real time
 Maintainer: Serena
