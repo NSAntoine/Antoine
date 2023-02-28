@@ -90,6 +90,9 @@
 		CE3EA2FD2944F71D00DC5AA8 /* TextFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFilter.swift; sourceTree = "<group>"; };
 		CE41217029446DE40010A5B6 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		CE41217229446E5E0010A5B6 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		CE4DFBB429ACC7EC0024E0CF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CE4DFBB529ACC7EC0024E0CF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE4DFBB629ACC7EC0024E0CF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		CE4E0F2129349B930070E09A /* StreamEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamEvent.swift; sourceTree = "<group>"; };
 		CE5212402930A29B00521064 /* Antoine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antoine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5212432930A29B00521064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -381,6 +384,7 @@
 				ja,
 				nl,
 				ko,
+				"zh-Hant",
 			);
 			mainGroup = CE5212372930A29B00521064;
 			packageReferences = (
@@ -467,6 +471,7 @@
 				CE366BF629A93165002A52C6 /* ja */,
 				CE16F2D329A94F9A00CE619A /* nl */,
 				CE06B75229A9EDD900306677 /* ko */,
+				CE4DFBB529ACC7EC0024E0CF /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				CE366BF529A93165002A52C6 /* ja */,
 				CE16F2D229A94F9A00CE619A /* nl */,
 				CE06B75129A9EDD800306677 /* ko */,
+				CE4DFBB429ACC7EC0024E0CF /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				CE366BF729A93165002A52C6 /* ja */,
 				CE16F2D429A94F9B00CE619A /* nl */,
 				CE06B75329A9EDD900306677 /* ko */,
+				CE4DFBB629ACC7EC0024E0CF /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

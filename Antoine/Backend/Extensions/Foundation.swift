@@ -5,7 +5,6 @@
 //  Created by Serena on 18/01/2023.
 //
 
-import UIKit
 import Foundation
 
 extension DateFormatter {
@@ -19,11 +18,6 @@ extension Notification.Name {
     /// For when the timer interval for ``StreamViewController`` changes
     static var streamTimerIntervalDidChange: Notification.Name {
         return NSNotification.Name("timerIntervalDidChange")
-    }
-    
-	/// DEPRECATED.
-    static var backgroundModeChanged: Notification.Name {
-        return NSNotification.Name("backgroundModeChanged")
     }
 }
 

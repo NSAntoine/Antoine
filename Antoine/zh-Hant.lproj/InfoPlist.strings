@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Antoine
+
+  Created by Serena on 12/02/2023.
+  
+*/
+
+NSLocationAlwaysAndWhenInUseUsageDescription = "為了能順利在背景運行，請授權Antoine的定位服務為「永遠」或「使用App期間」。";

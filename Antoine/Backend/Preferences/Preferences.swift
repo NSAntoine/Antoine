@@ -65,13 +65,9 @@ fileprivate extension Preferences {
             .locationManager
             .locationManager
             .requestAlwaysAuthorization()
-        
-        NotificationCenter.default.post(
-            Notification(name: .backgroundModeChanged, object: newValue)
-        )
     }
     
     static func preferredLangChangedCallback(newValue: String?) {
-        Bundle.preferredLocalizationBundle = Bundle.makeLocalizationBundle(preferredLanguageCode: newValue)
+        Bundle.preferredLocalizationBundle = .makeLocalizationBundle(preferredLanguageCode: newValue)
     }
 }

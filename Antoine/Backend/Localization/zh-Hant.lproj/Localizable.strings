@@ -1,0 +1,131 @@
+/*
+ Localizable.strings (Chinese, Traditional)
+ Antoine
+ 
+ Created by Serena on 12/02/2023.
+ Localized by CydaIDev
+ */
+
+/* Entry Filter View Controller (Navigation Title) */
+"Search Filter" = "搜尋濾器";
+
+/* Entry Filter View Controller (Section Titles) */
+"Enabled" = "啟用";
+"Process ID" = "程序ID(Process ID)";
+"Process Name" = "程序名稱";
+"Category" = "類別";
+"Subsystem" = "子系統(Subsystem)";
+"Allowed Types" = "允許的類型";
+
+/* Entry Filter View Controller (isEnabled Section Names) */
+"Filter by Message Text" = "以訊息文字過濾";
+"Filter by Process ID" = "以程序ID(Process ID)過濾";
+"Filter by Process Name" = "以程序名稱過濾";
+"Filter by Category" = "以類別過濾";
+"Filter by Subsystem" = "以子系統(Subsystem)過濾";
+
+/* Entry Filter View Controller (UITextView Placeholders) */
+"Message text filter.." = "在此輸入欲過濾的訊息文字...";
+"Subsystem filter.." = "在此輸入欲過濾的子系統...";
+"Category filter.." = "在此輸入欲過濾的類別...";
+"Process name filter.." = "在此輸入欲過濾的程序名稱...";
+
+/* Entry Filter View Controller (Other) */
+"Apply" = "套用";
+"Mode" = "過濾模式";
+"Process ID entered must be a valid number" = "程序ID必須是個有效的數值";
+
+/* Stream View Controller */
+"Stream" = "實時串流";
+
+/* Preferences View Controller */
+"Preferences" = "設置";
+"Reset" = "重置顏色設定";
+"Refresh Rate" = "串流更新頻率";
+"Type Colors" = "類型(Type)顏色";
+"RefreshRateExplaination" = "此為實時串流更新以生成紀錄(Log)所需的秒數，範例：假設您設為1.00，則實時串流會每1.00秒生成新的紀錄。";
+
+/* Credits */
+"Credits" = "鳴謝與貢獻";
+
+/* Entry View Controller (Sections) */
+"Message" = "訊息";
+"Process" = "程序";
+"Sender"  = "呼叫者(Sender)";
+"Date"    = "日期";
+"Other"   = "其他";
+"Category & Subsystem" = "類別與子系統";
+
+/* Entry View Controller (Primary Text) */
+"Name" = "名稱";
+"ID" = "ID";
+"Path" = "路徑";
+"Timestamp (UNIX Time)" = "時間戳記(UNIX Time)";
+"Message Type" = "訊息類型";
+"Event Type" = "事件類型";
+"Activity ID" = "活動ID(Activity ID)";
+"Trace ID" = "追溯ID(Trace ID)";
+"Thread ID" = "線程ID(Thread ID)";
+
+/* Entry View Controller (Misc) */
+"Copy" = "複製"; /* copying item to clipboard */
+"Open in %@" = "在%@中開啟";
+
+/* MessageEvent display texts */
+"Default" = "預設";
+"Debug" = "偵錯(Debug)";
+"Info" = "資訊";
+"Fault" = "故障(Fault)";
+"Error" = "錯誤(Error)";
+
+/* TextFilter mode descriptions */
+"Equal To" = "等同於";
+"Not Equal To" = "不等同於";
+/* text contains another text */
+"Contains" = "包含";
+/* text *doesn't* contain other text in it */
+"Doesn't Contain" = "沒有包含";
+/* text starts with another text */
+"Starts With" = "以...為開頭";
+/* text ends with another text */
+"Ends With" = "以...為結尾";
+
+/* Background Mode (Application UI) */
+"Background Mode" = "背景運行模式";
+"Collect logs in background" = "在背景持續收集紀錄";
+"Stay active in background for.." = "在背景保持運行...";
+"Keep collecting logs in the background" = "持續在背景收集紀錄";
+"For background mode, please authorize the app with Always-On Location Services" = "為了能順利在背景運行，請授權Antoine的定位服務為「永遠」或「使用App期間」。";
+"Until manually disabled" = "直到手動關閉應用程式";
+
+/* Background Mode (User Notifications) */
+"Stopped" = "暫停";
+"Pause" = "暫停";
+"Couldn't start background mode" = "無法啟用背景模式";
+"Antoine needs Always-On Location Authorization in order to enable Background Mode" = "為了能順利在背景運行，請授權Antoine的定位服務為「永遠」或「使用App期間」。";
+"Antoine is now collecting logs in the background" = "Antoine正在背景收集紀錄中";
+"App has stopped collecting logs in background" = "Antoine已停止在背景收集紀錄";
+
+/*
+ NSLocationAlwaysAndWhenInUseUsageDescription
+ This is here because localizers will prob forget to go into InfoPlist.strings,
+ so i'll just manually copy paste the localization here to the InfoPlist.strings
+ */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "為了能順利在背景運行，請授權Antoine的定位服務為「永遠」或「使用App期間」。";
+
+/* Stream Options */
+"Stream Options" = "實時串流顯示選項";
+"All" = "選擇全部";
+"Show Messages before Stream was started" = "在實時串流開始前顯示訊息";
+"Don't include sensitive data" = "不要包含敏感性資料";
+"Include Debug Messages" = "包含偵錯(Debug)訊息";
+"Include Info Messages" = "包含資訊(Info)訊息";
+"Precise Timestamps" = "精確的時間戳記";
+
+/* PreferredLanguageViewController */
+"Language" = "語言";
+"Restart Application for changes to fully apply" = "請重新開啟Antoine以完整套用更動";
+"Use System Language" = "使用系統語言";
+
+/* MenuItems UIAlertController items */
+"Cancel" = "取消";
