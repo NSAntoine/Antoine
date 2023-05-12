@@ -45,8 +45,9 @@
 		CEB4CC9F296C7F5100CAE0B6 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4CC9E296C7F5100CAE0B6 /* PreferencesViewController.swift */; };
 		CEC98B2C29996A0B0072AA0C /* BackgroundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC98B2B29996A0B0072AA0C /* BackgroundMode.swift */; };
 		CECCBA4029993C5A00BA19F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CECCBA4229993C5A00BA19F6 /* InfoPlist.strings */; };
+		CECE29562A0D5D55007F6E38 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE29552A0D5D55007F6E38 /* Entry.swift */; };
+		CECE29582A0D5F44007F6E38 /* CodableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE29572A0D5F44007F6E38 /* CodableEntry.swift */; };
 		CEE341E3293512E6002BF6E3 /* BasicLayoutAnchorsHolding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE341E2293512E6002BF6E3 /* BasicLayoutAnchorsHolding.swift */; };
-		CEE590D0294355DF00BBE325 /* StreamEntry+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE590CF294355DF00BBE325 /* StreamEntry+Encodable.swift */; };
 		CEEA8600294B9BAF00B0F607 /* TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA85FF294B9BAF00B0F607 /* TextViewDelegate.swift */; };
 		CEFAFB10297C5B1C0043FD60 /* Alderis in Frameworks */ = {isa = PBXBuildFile; productRef = CEFAFB0F297C5B1C0043FD60 /* Alderis */; };
 /* End PBXBuildFile section */
@@ -136,8 +137,9 @@
 		CEBCCEC8299E0572006C3D23 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CEC98B2B29996A0B0072AA0C /* BackgroundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMode.swift; sourceTree = "<group>"; };
 		CECCBA4129993C5A00BA19F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CECE29552A0D5D55007F6E38 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		CECE29572A0D5F44007F6E38 /* CodableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableEntry.swift; sourceTree = "<group>"; };
 		CEE341E2293512E6002BF6E3 /* BasicLayoutAnchorsHolding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicLayoutAnchorsHolding.swift; sourceTree = "<group>"; };
-		CEE590CF294355DF00BBE325 /* StreamEntry+Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StreamEntry+Encodable.swift"; sourceTree = "<group>"; };
 		CEEA85FF294B9BAF00B0F607 /* TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				CE52125B2930A51200521064 /* ActivityStream.swift */,
-				CEE590CF294355DF00BBE325 /* StreamEntry+Encodable.swift */,
 				CEA75A13293B3BD500E82B2B /* ActivityStreamDelegate.swift */,
 				CE55AABB2930CB1F00B24C22 /* StreamOptions.swift */,
 				CE4E0F2129349B930070E09A /* StreamEvent.swift */,
@@ -324,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				CE29769A29394DCC00EAD1D0 /* StreamEntry.swift */,
+				CECE29552A0D5D55007F6E38 /* Entry.swift */,
+				CECE29572A0D5F44007F6E38 /* CodableEntry.swift */,
 				CEAB8CC4293B673800702602 /* StreamEntryType.swift */,
 				CE55AABD2930CBEB00B24C22 /* MessageEvent.swift */,
 			);
@@ -442,16 +445,17 @@
 				CEAB8CC5293B673800702602 /* StreamEntryType.swift in Sources */,
 				CE588E6C29312E0900745627 /* EntryCollectionViewCell.swift in Sources */,
 				CEB3A3192996E501000EA892 /* SwiftUIGIF.swift in Sources */,
-				CEE590D0294355DF00BBE325 /* StreamEntry+Encodable.swift in Sources */,
 				CE29769B29394DCC00EAD1D0 /* StreamEntry.swift in Sources */,
 				CE6AB2AA293E406C004F41AF /* Menu.swift in Sources */,
 				CE52125C2930A51200521064 /* ActivityStream.swift in Sources */,
 				CE41217329446E5E0010A5B6 /* Preferences.swift in Sources */,
 				CE9EA0BC295E14BF007CE459 /* EntryFilterViewController.swift in Sources */,
 				CEEA8600294B9BAF00B0F607 /* TextViewDelegate.swift in Sources */,
+				CECE29562A0D5D55007F6E38 /* Entry.swift in Sources */,
 				CE84E0002943C1EC00FE1E17 /* CodableColor.swift in Sources */,
 				CEA4FB7D29A8C3AC008F73E4 /* Language.swift in Sources */,
 				CEE341E3293512E6002BF6E3 /* BasicLayoutAnchorsHolding.swift in Sources */,
+				CECE29582A0D5F44007F6E38 /* CodableEntry.swift in Sources */,
 				CE998E4A297850CD001A92B4 /* UIKit.swift in Sources */,
 				CEB4CC9F296C7F5100CAE0B6 /* PreferencesViewController.swift in Sources */,
 			);

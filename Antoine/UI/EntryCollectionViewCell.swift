@@ -12,46 +12,48 @@ import UIKit
 class EntryCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties and UI
     
-    var message: StreamEntry?
+    let nameLabel: UILabel = UILabel()
+    let messageLabel: UILabel = UILabel()
     
-    var nameLabel: UILabel!
-    var messageLabel: UILabel!
-    
-    func configure(message: StreamEntry) {
-        self.message = message
-        
-//        if #available(iOS 14, *) {
-//            backgroundConfiguration = EntryCollectionViewCell.backgroundConfiguration
-//        } else {
-            backgroundColor = EntryCollectionViewCell.cellBackgroundColor
-            layer.cornerRadius = EntryCollectionViewCell.cellCornerRadius
-//        }
-        
-        // process name label
-        self.nameLabel = UILabel(text: message.process,
-                                 font: Self.processNameLabelFont,
-                                 textColor: message.type?.displayColor)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.messageLabel = UILabel(text: message.eventMessage, font: Self.messageTextFont, textColor: .secondaryLabel)
-        messageLabel.numberOfLines = 2
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(messageLabel)
-        
-        let guide = contentView.layoutMarginsGuide
-        
-        NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-            nameLabel.topAnchor.constraint(equalTo: guide.topAnchor),
-            
-            messageLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-            messageLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-            messageLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
-        ])
-        
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		
+		nameLabel.font = Self.processNameLabelFont
+		nameLabel.translatesAutoresizingMaskIntoConstraints = false
+		
+		messageLabel.font = Self.messageTextFont
+		messageLabel.textColor = .secondaryLabel
+		messageLabel.numberOfLines = 2
+		messageLabel.translatesAutoresizingMaskIntoConstraints = false
+		
+		backgroundColor = EntryCollectionViewCell.cellBackgroundColor
+		layer.cornerRadius = EntryCollectionViewCell.cellCornerRadius
+		
+		contentView.addSubview(nameLabel)
+		contentView.addSubview(messageLabel)
+		
+		let guide = contentView.layoutMarginsGuide
+		
+		NSLayoutConstraint.activate([
+			nameLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+			nameLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+			nameLabel.topAnchor.constraint(equalTo: guide.topAnchor),
+			
+			messageLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+			messageLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+			messageLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+		])
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func configure(message: StreamEntry) {
+		nameLabel.text = message.process
+		nameLabel.textColor = message.type?.displayColor
+		
+		messageLabel.text = message.eventMessage
     }
     
     override func prepareForReuse() {
@@ -59,7 +61,6 @@ class EntryCollectionViewCell: UICollectionViewCell {
         
         nameLabel.text = nil
         messageLabel.text = nil
-        message = nil
     }
     
     override var reuseIdentifier: String? {

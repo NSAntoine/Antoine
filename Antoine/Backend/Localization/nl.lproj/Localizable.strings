@@ -70,6 +70,8 @@
 /* Entry View Controller (Misc) */
 "Copy" = "Kopieren"; /* copying item to clipboard */
 "Open in %@" = "Open in %@";
+"Share Log" = "Share Log";
+"%@ Logs" = "%@ Logs";
 
 /* MessageEvent display texts */
 "Default" = "Default";

@@ -70,6 +70,8 @@
 /* Entry View Controller (Misc) */
 "Copy" = "複製"; /* copying item to clipboard */
 "Open in %@" = "在%@中開啟";
+"Share Log" = "Share Log";
+"%@ Logs" = "%@ Logs";
 
 /* MessageEvent display texts */
 "Default" = "預設";

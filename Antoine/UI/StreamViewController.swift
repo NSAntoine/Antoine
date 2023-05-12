@@ -66,6 +66,13 @@ class StreamViewController: UIViewController {
     /// whether or not to automatically scroll to the bottom every time a batch of entries is recieved
     var automaticallyScrollToBottom: Bool = true
     
+    let numberFormatter: NumberFormatter = {
+        let fmt = NumberFormatter()
+        fmt.usesGroupingSeparator = true
+        fmt.numberStyle = .decimal
+        return fmt
+    }()
+    
     /// this batch is used for performance reasons,
     /// entries are temporarily added to this batch array,
     /// then, once the timer runs, the items from it are added and the batch array
@@ -79,19 +86,16 @@ class StreamViewController: UIViewController {
         
         navigationController?.setToolbarHidden(false, animated: true)
         
-        title = .localized("Stream")
-        
-        /*
         let streamTitleLabel = UILabel(text: .localized("Stream"))
         streamTitleLabel.textAlignment = .center
-        streamTitleLabel.font = navigationController?.navigationBar.value(forKey: "_defaultTitleFont") as? UIFont
+        streamTitleLabel.font = (navigationController?.navigationBar.value(forKey: "_defaultTitleFont") as? UIFont) ?? .boldSystemFont(ofSize: 17)
         amountOfItemsLabel = UILabel() // no text yet till we actually get an item
         amountOfItemsLabel.font = .preferredFont(forTextStyle: .caption2)
         amountOfItemsLabel.textAlignment = .center
+        
         let titleStackView = UIStackView(arrangedSubviews: [streamTitleLabel, amountOfItemsLabel])
         titleStackView.axis = .vertical
         navigationItem.titleView = titleStackView
-        */
         
         setupCollectionView()
         makeDataSource()
@@ -262,9 +266,16 @@ extension StreamViewController {
     func clearAll() {
         var snapshot: NSDiffableDataSourceSnapshot<Section, StreamEntry> = .init()
         snapshot.appendSections([.main])
-        dataSource.apply(snapshot)
+        dataSourceApply(snapshot: snapshot)
     }
 	
+    func dataSourceApply(snapshot: NSDiffableDataSourceSnapshot<Section, StreamEntry>) {
+        
+        dataSource.apply(snapshot) {
+            self.amountOfItemsLabel.text = .localized("%@ Logs", arguments: self.numberFormatter.string(from: snapshot.numberOfItems as NSNumber) ?? snapshot.numberOfItems.description)
+        }
+    }
+    
     func makeTimer(interval: TimeInterval = Preferences.streamVCTimerInterval) -> Timer {
         return Timer(timeInterval: interval, repeats: true) { [self] _ in
             // if we're paused,
@@ -288,7 +299,7 @@ extension StreamViewController {
 		snapshot.appendItems(batch)
 		batch = []
 		//NSLog("Timer closure")
-		dataSource.apply(snapshot)
+        dataSourceApply(snapshot: snapshot)
 	}
 }
 
@@ -342,7 +353,6 @@ extension StreamViewController: UICollectionViewDelegate {
         } else {
             dataSource = DataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EntryCollectionViewCell.reuseIdentifier, for: indexPath) as! EntryCollectionViewCell
-                guard cell.message == nil else { return cell }
                 cell.configure(message: itemIdentifier)
                 return cell
             }
@@ -350,7 +360,7 @@ extension StreamViewController: UICollectionViewDelegate {
         
         var snapshot = dataSource.snapshot()
         snapshot.appendSections([.main])
-        dataSource.apply(snapshot)
+        dataSourceApply(snapshot: snapshot)
     }
     
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
@@ -369,7 +379,7 @@ extension StreamViewController: UICollectionViewDelegate {
         presentEntryViewController(for: item)
     }
     
-    func presentEntryViewController(for entry: StreamEntry) {
+    func presentEntryViewController(_ controller: EntryViewController) {
         if #available(iOS 14, *), let splitViewController, Preferences.useiPadMode {
             if splitViewController.viewController(for: .secondary) is EntryViewController {
                 // retain cycle happens if u don't do this lol
@@ -379,21 +389,25 @@ extension StreamViewController: UICollectionViewDelegate {
             if splitViewController.viewController(for: .primary) != self {
                 splitViewController.setViewController(self, for: .primary)
             }
-            currentlyShownEntryViewController = EntryViewController(entry: entry)
+            currentlyShownEntryViewController = controller
             splitViewController.setViewController(currentlyShownEntryViewController, for: .secondary)
         } else {
-            let vc = UINavigationController(rootViewController: EntryViewController(entry: entry))
+            let vc = UINavigationController(rootViewController: controller)
             
-			if #available(iOS 15.0, *), UIDevice.current.userInterfaceIdiom == .pad,
-			   let sheet = vc.sheetPresentationController {
-				sheet.prefersGrabberVisible = true
-				sheet.detents = [.medium(), .large()]
-				sheet.preferredCornerRadius = 20
-				//sheet.largestUndimmedDetentIdentifier = .large
-			}
-			
+            if #available(iOS 15.0, *), UIDevice.current.userInterfaceIdiom == .pad,
+               let sheet = vc.sheetPresentationController {
+                sheet.prefersGrabberVisible = true
+                sheet.detents = [.medium(), .large()]
+                sheet.preferredCornerRadius = 20
+                //sheet.largestUndimmedDetentIdentifier = .large
+            }
+            
             present(vc, animated: true)
         }
+    }
+    
+    func presentEntryViewController(for entry: StreamEntry) {
+        presentEntryViewController(EntryViewController(entry: entry))
     }
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
@@ -401,7 +415,9 @@ extension StreamViewController: UICollectionViewDelegate {
             return nil
         }
         
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: {
+            return EntryViewController(entry: entry)
+        }, actionProvider: { _ in
             func _makeCopyUIAction(title: String, stringToCopy: String) -> UIAction {
                 return UIAction(title: title) { _ in
                     UIPasteboard.general.string = stringToCopy
@@ -414,8 +430,20 @@ extension StreamViewController: UICollectionViewDelegate {
             let embeddedCopyMenu = UIMenu(title: "Copy..",
                                           image: UIImage(systemName: "doc.on.doc"),
                                           children: [copyName, copyMessage, copyPath])
-			return UIMenu(children: [embeddedCopyMenu])
-        }
+            let shareAction = UIAction(title: .localized("Share Log"), image: UIImage(systemName: "square.and.arrow.up")) { [unowned self] _ in
+                let bounds: CGRect = view.bounds
+                
+                export(entry: entry, senderView: view, senderRect: CGRect(x: bounds.midX, y: bounds.midY, width: 0, height: 0))
+            }
+            
+			return UIMenu(children: [embeddedCopyMenu, shareAction])
+        })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        guard let vc = animator.previewViewController as? EntryViewController else { return }
+        presentEntryViewController(vc)
+        
     }
 }
 

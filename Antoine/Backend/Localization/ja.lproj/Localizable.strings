@@ -70,6 +70,8 @@
 /* Entry View Controller (Misc) */
 "Copy" = "コピー"; /* copying item to clipboard */
 "Open in %@" = "%@で開く";
+"Share Log" = "Share Log";
+"%@ Logs" = "%@ Logs";
 
 /* MessageEvent display texts */
 "Default" = "デファルト";

@@ -17,7 +17,7 @@ class EntryViewController: UIViewController {
     var titleView: UIView!
     var textView: UITextView!
     
-    var entry: StreamEntry
+    var entry: any Entry
     
     lazy var dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
@@ -35,7 +35,7 @@ class EntryViewController: UIViewController {
         return cell
     }
     
-    init(entry: StreamEntry) {
+    init(entry: any Entry) {
         self.entry = entry
         
         super.init(nibName: nil, bundle: nil)
@@ -81,7 +81,7 @@ class EntryViewController: UIViewController {
         var moreDetailsText = DateFormatter(dateFormat: "MMM d, h:mm a").string(from: entry.timestamp)
         // the label underneath the large process title
         if let type = entry.type {
-            moreDetailsText.append("- \(type.description)")
+            moreDetailsText.append(" - \(type.description)")
         }
         
         let moreDetailsLabel = UILabel(text: moreDetailsText, font: .preferredFont(forTextStyle: .footnote), textColor: .white)
@@ -91,6 +91,26 @@ class EntryViewController: UIViewController {
         labelsStackView.translatesAutoresizingMaskIntoConstraints = false
         
         titleView.addSubview(labelsStackView)
+        
+        let shareLogContainer = UIView()
+        shareLogContainer.backgroundColor = .systemBackground
+        shareLogContainer.layer.cornerRadius = 7
+        shareLogContainer.translatesAutoresizingMaskIntoConstraints = false
+        titleView.addSubview(shareLogContainer)
+        
+        let shareLogButton = UIButton(type: .system)
+        shareLogButton.setTitle(.localized("Share Log"), for: .normal)
+        shareLogButton.imageEdgeInsets.left = -10
+        shareLogButton.setImage(UIImage(systemName: "square.and.arrow.up")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: UIFont.systemFontSize)), for: .normal)
+        shareLogButton.translatesAutoresizingMaskIntoConstraints = false
+        shareLogButton.titleLabel?.font = .boldSystemFont(ofSize: UIFont.systemFontSize)
+        shareLogButton.addTarget(self, action: #selector(shareButtonClicked(sender:)), for: .touchUpInside)
+        shareLogContainer.addSubview(shareLogButton)
+        
+        NSLayoutConstraint.activate([
+            shareLogButton.centerXAnchor.constraint(equalTo: shareLogContainer.centerXAnchor),
+            shareLogButton.centerYAnchor.constraint(equalTo: shareLogContainer.centerYAnchor)
+        ])
         
         view.addSubview(titleView)
         
@@ -102,7 +122,12 @@ class EntryViewController: UIViewController {
             
             labelsStackView.leadingAnchor.constraint(equalTo: titleView.layoutMarginsGuide.leadingAnchor, constant: 17),
             labelsStackView.trailingAnchor.constraint(equalTo: titleView.layoutMarginsGuide.trailingAnchor),
-            labelsStackView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
+            labelsStackView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
+            
+            shareLogContainer.trailingAnchor.constraint(equalTo: titleView.layoutMarginsGuide.trailingAnchor),
+            shareLogContainer.widthAnchor.constraint(equalToConstant: 115),
+            shareLogContainer.heightAnchor.constraint(equalToConstant: 30),
+            shareLogContainer.bottomAnchor.constraint(equalTo: titleView.layoutMarginsGuide.bottomAnchor)
         ])
     }
     
@@ -179,7 +204,7 @@ class EntryViewController: UIViewController {
                 ])
                 
                 container.translatesAutoresizingMaskIntoConstraints = false
-                cell.addSubview(container)
+                cell.contentView.addSubview(container)
                 container.constraintCompletely(to: cell.contentView)
             }
             
@@ -227,7 +252,7 @@ class EntryViewController: UIViewController {
                 DetailItem(primaryText: .localized("Activity ID"),
                            secondaryText: entry.activityID, id: "ActivityID"),
                 DetailItem(primaryText: .localized("Trace ID"),
-                           secondaryText: entry.traceID, id: "TraceID"),
+                           secondaryText: entry.entryTraceID, id: "TraceID"),
                 DetailItem(primaryText: .localized("Thread ID"),
                            secondaryText: entry.threadID, id: "ThreadID")
             ]
@@ -236,6 +261,11 @@ class EntryViewController: UIViewController {
     
     deinit {
         print("EntryViewController deinit called for \(entry)")
+    }
+    
+    @objc
+    func shareButtonClicked(sender: UIButton) {
+        export(entry: entry, senderView: sender, senderRect: sender.frame)
     }
 }
 
@@ -311,6 +341,9 @@ extension EntryViewController: UITableViewDelegate {
         let section = snapshot.sectionIdentifiers[sectionNumber]
         
         let container = UIView()
+        container.tag = sectionNumber
+        container.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(collapseOrExpandSectionFromView(sender:))))
+        
         let label = UILabel(text: section.title)
         label.font = EntryViewController.headerLabelFont
         
@@ -318,6 +351,7 @@ extension EntryViewController: UITableViewDelegate {
         button.addTarget(self, action: #selector(collapseOrExpandSection(sender:)), for: .touchUpInside)
         button.setImage(makeImageSuitableForHeader(systemName: sectionHeaderChevronImageName(forSection: section, snapshot: snapshot)), for: .normal)
         button.tag = sectionNumber
+        let noItemsVisibleInSection = snapshot.itemIdentifiers(inSection: section).isEmpty
         
         label.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -332,6 +366,10 @@ extension EntryViewController: UITableViewDelegate {
             button.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             button.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
+        
+        if noItemsVisibleInSection {
+            button.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2.0)
+        }
         
         return container
     }
@@ -392,6 +430,17 @@ extension EntryViewController: UITableViewDelegate {
         }
     }
     
+    @objc
+    func collapseOrExpandSectionFromView(sender: UITapGestureRecognizer) {
+        guard let view = sender.view else { return }
+        for subview in view.subviews {
+            if let button = subview as? UIButton {
+                self.collapseOrExpandSection(sender: button)
+                break
+            }
+        }
+    }
+    
     // expands or collapses a section,
     // with the section coming from the button's tag
     @objc
@@ -399,27 +448,25 @@ extension EntryViewController: UITableViewDelegate {
         var snapshot = dataSource.snapshot()
         let section = snapshot.sectionIdentifiers[sender.tag]
         let items = snapshot.itemIdentifiers(inSection: section)
-        let newImage: UIImage?
         
-        // if the section is empty, it's collapsed, bring back it's items.
         if items.isEmpty {
             snapshot.appendItems(detailItems(section: section), toSection: section)
-            newImage = makeImageSuitableForHeader(systemName: "chevron.down")
         } else {
             snapshot.deleteItems(items)
-            newImage = makeImageSuitableForHeader(systemName: "chevron.right")
         }
         
+        UIView.animate(withDuration: 0.25, animations: {
+            sender.transform = items.isEmpty ? .identity : CGAffineTransform(rotationAngle: -CGFloat.pi / 2.0)
+        })
+        
         dataSource.apply(snapshot, animatingDifferences: true)
-        UIView.transition(with: sender,
-                          duration: 0.2,
-                          options: [.allowAnimatedContent, .transitionFlipFromRight]) {
-            sender.setImage(newImage, for: .normal)
-        }
+     
     }
     
     func sectionHeaderChevronImageName(forSection section: Section, snapshot: NSDiffableDataSourceSnapshot<Section, DetailItem>) -> String {
-        return snapshot.numberOfItems(inSection: section) == 0 ? "chevron.right" : "chevron.down"
+        return "chevron.down"
+//        return "chevron.right"
+//        return snapshot.numberOfItems(inSection: section) == 0 ? "chevron.right" : "chevron.down"
     }
     
     func makeImageSuitableForHeader(systemName: String) -> UIImage? {

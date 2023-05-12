@@ -53,6 +53,34 @@ extension UIViewController {
         }
         present(alert, animated: true)
     }
+    
+    func export(entry: Entry, senderView: UIView, senderRect: CGRect) {
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = [.prettyPrinted, .withoutEscapingSlashes, .sortedKeys]
+            let serialized = try encoder.encode(CodableEntry(streamEntry: entry))
+            let docsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+                .appendingPathComponent("Antoine Logs")
+            try FileManager.default.createDirectory(at: docsURL, withIntermediateDirectories: true) /* if dir doesn't already exist */
+            let fileURL = docsURL
+                .appendingPathComponent(
+                    "\(entry.process) (\(DateFormatter(dateFormat: "MMM d h:mm a").string(from: entry.timestamp)))"
+                )
+                .appendingPathExtension("antoinelog")
+            
+            if FileManager.default.createFile(atPath: fileURL.path, contents: serialized) {
+                let vc = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+                
+                vc.popoverPresentationController?.sourceView = senderView
+                vc.popoverPresentationController?.sourceRect = /*sender.frame*/senderRect
+                present(vc, animated: true)
+            } else {
+                errorAlert(title: .localized("Failed to create log file"), description: nil)
+            }
+        } catch {
+            errorAlert(title: .localized("Error creating log file"), description: error.localizedDescription)
+        }
+    }
 }
 
 extension NSDiffableDataSourceSnapshot {

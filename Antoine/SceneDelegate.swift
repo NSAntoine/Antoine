@@ -42,8 +42,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.streamViewController = streamVC
         window.rootViewController = windowViewController
         window.makeKeyAndVisible()
-        
+        self.scene(scene, openURLContexts: connectionOptions.urlContexts)
         self.window = window
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts contexts: Set<UIOpenURLContext>) {
+        guard var url = contexts.first?.url, url.pathExtension == "antoinelog" else { return }
+        if !url.isFileURL {
+            url = URL(fileURLWithPath: url.path)
+        }
+        
+        if let contents = try? Data(contentsOf: url),
+           let asEntry = try? JSONDecoder().decode(CodableEntry.self, from: contents),
+           var rootVC = window?.rootViewController ?? UIApplication.shared.keyWindow?.rootViewController {
+            if let alreadyPresenting = rootVC.presentedViewController {
+                alreadyPresenting.dismiss(animated: true) {
+                    rootVC.present(EntryViewController(entry: asEntry), animated: true)
+                }
+            } else {
+                rootVC.present(EntryViewController(entry: asEntry), animated: true)
+            }
+        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
