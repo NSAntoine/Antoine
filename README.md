@@ -11,6 +11,7 @@ If you have used Console.app on macOS before, think of this as the iOS equivalen
 - Filter by a variety of ways, such as message, process, category, subsystem, and pid.
 - View variety of information relating to a log, such as when it was made, it's type, etc
 - Keep app streaming in the background (needs always-on location authorization)
+- Export & import logs
 
 ## What can this be installed on?
 Any iOS 13+ device that is jailbroken or uses TrollStore, basically any device where you can get arbitrary entitlements
