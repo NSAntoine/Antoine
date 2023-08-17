@@ -657,7 +657,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Antoine/Backend/Bridge",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.serena.Antoine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -697,7 +697,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Antoine/Backend/Bridge",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.serena.Antoine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

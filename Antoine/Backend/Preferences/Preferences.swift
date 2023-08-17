@@ -26,7 +26,7 @@ enum Preferences {
     @Storage(key: "EnableBackgroundLogging", defaultValue: false)
     static var enableBackgroundLogging: Bool
     
-    @Storage(key: "", defaultValue: true)
+    @Storage(key: "ShowPrivateData", defaultValue: true)
     static var showPrivateData: Bool
     
     @CodableStorage(key: "EntryFilter", defaultValue: nil)
