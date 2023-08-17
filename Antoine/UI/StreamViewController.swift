@@ -7,7 +7,7 @@
 
 import UIKit
 import ActivityStreamBridge
-//import os
+import os.log
 
 /// A View Controller displaying Log Entires / Log Messages
 /// that are reported by the OS in real time.
@@ -23,7 +23,6 @@ class StreamViewController: UIViewController {
     var currentlyShownEntryViewController: EntryViewController?
     var filter: EntryFilter? = Preferences.entryFilter {
         didSet {
-	
             Preferences.entryFilter = filter
         }
     }
@@ -47,7 +46,7 @@ class StreamViewController: UIViewController {
                                action: #selector(stopOrStartStream))
     }()
     
-    var options: StreamOptions = StreamOptions(rawValue: UserDefaults.standard.integer(forKey: "StreamOptionsRawValue")) {
+    var options: StreamOption = StreamOption(rawValue: UserDefaults.standard.integer(forKey: "StreamOptionsRawValue")) {
         didSet {
             UserDefaults.standard.set(options.rawValue, forKey: "StreamOptionsRawValue")
             if logStream.isStreaming {
@@ -127,6 +126,8 @@ class StreamViewController: UIViewController {
             RunLoop.main.add(self.timer, forMode: .common)
         }
         
+        ActivityStream.enableShowPrivateData(Preferences.showPrivateData)
+        
         /*
          hmmm...
 		if #available(iOS 14, *) {
@@ -141,7 +142,7 @@ class StreamViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
          */
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -204,12 +205,28 @@ extension StreamViewController {
     
     /// Converts all ``TitledStreamOption`` instances to MenuItems
     private func titledStreamOptionsToMenuItems() -> [MenuItem] {
+        // Stream option set
         return TitledStreamOption.all.map { opt in
             return MenuItem(title: opt.title, image: nil, isEnabled: options.contains(opt.option)) { [self] in
                 options.removeOrInsertBasedOnExistance(opt.option)
                 
                 navigationItem.leftBarButtonItem = makeOptionsEditBarButtonItem()
             }
+        } + [makeToggleShowPrivateMenuItem()]
+    }
+    
+    private func makeToggleShowPrivateMenuItem() -> MenuItem {
+        return MenuItem(title: .localized("Show Private data in most Logs (gets rid of <private>)"), image: nil, isEnabled: Preferences.showPrivateData) { [self] in
+            var newValue = Preferences.showPrivateData
+            
+            // toggle bc the user just did so
+            newValue.toggle()
+            
+            ActivityStream.enableShowPrivateData(newValue)
+            Preferences.showPrivateData = newValue
+            
+            // Reload bar
+            navigationItem.leftBarButtonItem = makeOptionsEditBarButtonItem()
         }
     }
     

@@ -35,5 +35,5 @@ extension UniqueCollection {
 extension Set: UniqueCollection {}
 // Add all `OptionSet` conforming types here
 // since we can't do `extension OptionSet: UniqueCollection`
-extension StreamOptions: UniqueCollection {}
+extension StreamOption: UniqueCollection {}
 

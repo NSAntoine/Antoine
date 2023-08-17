@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,7 @@
 		CE5212502930A29C00521064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE52124E2930A29C00521064 /* LaunchScreen.storyboard */; };
 		CE52125C2930A51200521064 /* ActivityStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52125B2930A51200521064 /* ActivityStream.swift */; };
 		CE55AABA2930C9C300B24C22 /* LoggingSupport.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE55AAB72930C9A800B24C22 /* LoggingSupport.tbd */; };
-		CE55AABC2930CB1F00B24C22 /* StreamOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55AABB2930CB1F00B24C22 /* StreamOptions.swift */; };
+		CE55AABC2930CB1F00B24C22 /* StreamOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55AABB2930CB1F00B24C22 /* StreamOption.swift */; };
 		CE55AABE2930CBEB00B24C22 /* MessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55AABD2930CBEB00B24C22 /* MessageEvent.swift */; };
 		CE55AAC42930E08000B24C22 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55AAC32930E08000B24C22 /* StreamViewController.swift */; };
 		CE588E6C29312E0900745627 /* EntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE588E6B29312E0900745627 /* EntryCollectionViewCell.swift */; };
@@ -106,7 +106,7 @@
 		CE5212602930A6A200521064 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		CE5212612930A6B100521064 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		CE55AAB72930C9A800B24C22 /* LoggingSupport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = LoggingSupport.tbd; sourceTree = "<group>"; };
-		CE55AABB2930CB1F00B24C22 /* StreamOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamOptions.swift; sourceTree = "<group>"; };
+		CE55AABB2930CB1F00B24C22 /* StreamOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamOption.swift; sourceTree = "<group>"; };
 		CE55AABD2930CBEB00B24C22 /* MessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEvent.swift; sourceTree = "<group>"; };
 		CE55AAC32930E08000B24C22 /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		CE588E6B29312E0900745627 /* EntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 			children = (
 				CE52125B2930A51200521064 /* ActivityStream.swift */,
 				CEA75A13293B3BD500E82B2B /* ActivityStreamDelegate.swift */,
-				CE55AABB2930CB1F00B24C22 /* StreamOptions.swift */,
+				CE55AABB2930CB1F00B24C22 /* StreamOption.swift */,
 				CE4E0F2129349B930070E09A /* StreamEvent.swift */,
 			);
 			path = Stream;
@@ -440,7 +440,7 @@
 				CE998E4D2978510B001A92B4 /* Foundation.swift in Sources */,
 				CE85473729360DB300D9685C /* EntryViewController.swift in Sources */,
 				CE619948299801A400CF6C55 /* ApplicationMonitor.swift in Sources */,
-				CE55AABC2930CB1F00B24C22 /* StreamOptions.swift in Sources */,
+				CE55AABC2930CB1F00B24C22 /* StreamOption.swift in Sources */,
 				CE5212462930A29B00521064 /* SceneDelegate.swift in Sources */,
 				CEAB8CC5293B673800702602 /* StreamEntryType.swift in Sources */,
 				CE588E6C29312E0900745627 /* EntryCollectionViewCell.swift in Sources */,

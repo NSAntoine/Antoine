@@ -18,9 +18,6 @@ enum Preferences {
     @Storage(key: "UseiPadMode", defaultValue: false)
     static var useiPadMode: Bool
     
-    @CodableStorage(key: "EntryFilter", defaultValue: nil)
-    static var entryFilter: EntryFilter?
-    
     /// Language code of user preferred language, if there is one.
     @Storage(key: "UserPreferredLanguageCode", defaultValue: nil, callback: preferredLangChangedCallback)
     static var preferredLanguageCode: String?
@@ -28,6 +25,12 @@ enum Preferences {
     /// Whether or not to keep taking in log entries while the app is in the background.
     @Storage(key: "EnableBackgroundLogging", defaultValue: false)
     static var enableBackgroundLogging: Bool
+    
+    @Storage(key: "", defaultValue: true)
+    static var showPrivateData: Bool
+    
+    @CodableStorage(key: "EntryFilter", defaultValue: nil)
+    static var entryFilter: EntryFilter?
     
     @CodableStorage(key: "BackgroundMode", defaultValue: nil, handler: _backgroundModeCallback)
     static var backgroundMode: BackgroundMode?

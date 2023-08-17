@@ -1,6 +1,6 @@
 ---
 archs:                 [ armv7, armv7s, arm64, arm64e, x86_64 ]
-platform:              (null)
+platform:              ios
 install-name:          /System/Library/PrivateFrameworks/LoggingSupport.framework/LoggingSupport
 current-version:       1
 compatibility-version: 1

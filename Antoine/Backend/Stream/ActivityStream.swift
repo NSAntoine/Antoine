@@ -19,8 +19,32 @@ class ActivityStream {
     
     var isStreaming: Bool = false
     
+    static func enableShowPrivateData(_ newStatus: Bool) {
+        var ourCurrentDiagFlags: UInt32 = 0
+        
+        // Not going to cache this value as a `static let` because `enableShowPrivateData` is prob just gonna run
+        // 1 or 2 times through the app's lifetime
+        let privateDataFlag: UInt32 = 1 << 24
+        
+        host_get_atm_diagnostic_flag(mach_host_self(), &ourCurrentDiagFlags)
+        
+        let kret: kern_return_t
+        
+        if newStatus {
+            kret = host_set_atm_diagnostic_flag(mach_host_self(), ourCurrentDiagFlags | privateDataFlag)
+        } else {
+            kret = host_set_atm_diagnostic_flag(mach_host_self(), ourCurrentDiagFlags & ~privateDataFlag)
+        }
+        
+        if kret != KERN_SUCCESS {
+            NSLog("\(#function): Failed to set private data flag to \(newStatus ? "enabled" : "disabled"), error: \(String(cString: mach_error_string(kret)))")
+        } else {
+            NSLog("\(#function): successful")
+        }
+    }
+    
     /// Start the Log Stream.
-    func start(options: StreamOptions) {
+    func start(options: StreamOption) {
         let messageHandler: os_activity_stream_block_t = { (entry, error) in
             self.delegate?.activityStream(didRecieveEntry: entry, error: error)
             return true
