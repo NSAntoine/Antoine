@@ -33,6 +33,6 @@ Whenever we want to pause the activity stream, we call `os_activity_stream_cance
 - Stream View Controller should be made to look prettier
 
 ## Credits
-- [Serena](https://twitter.com/CoreSerena): Developer, creator of app
+- [Antoine](https://github.com/NSAntoine): Developer, creator of app
 - [saagarjha](https://federated.saagarjha.com/users/saagar): Help with using os_log_* functions
 - [Flower](https://twitter.com/flowerible): Icon designer
