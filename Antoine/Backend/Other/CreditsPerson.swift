@@ -16,9 +16,9 @@ struct CreditsPerson: Codable, Hashable {
         CreditsPerson(name: "saagarjha", role: "Help with OSLog",
                       pfpURL: "https://github.com/saagarjha.png",
                       socialLink: "https://federated.saagarjha.com/users/saagar"),
-        CreditsPerson(name: "Flower", role: "Icon designer",
-                      pfpURL: "https://github.com/flowerible.png",
-                      socialLink: "https://twitter.com/flowerible")
+        CreditsPerson(name: "Samara", role: "Icon designer",
+                      pfpURL: "https://github.com/khcrysalis.png",
+                      socialLink: "https://twitter.com/khcrysalis")
     ]
     
     let name: String
