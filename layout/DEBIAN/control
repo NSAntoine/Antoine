@@ -3,6 +3,6 @@ Name: Antoine
 Version: 1.2
 Architecture: iphoneos-arm
 Description: An Application to view System Logs, commonly known as syslog or OSLog, in real time
-Maintainer: Serena
-Author: Serena
+Maintainer: Antoine
+Author: Antoine
 Section: Tweaks
